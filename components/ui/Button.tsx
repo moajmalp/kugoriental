@@ -29,7 +29,7 @@ export default function Button(props: Props) {
   const { children, className = '', variant = 'primary', size = 'md' } = props
 
   const baseClasses =
-    'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 btn-lift'
+    'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 btn-lift btn-ripple'
 
   const variantClasses: Record<Variant, string> = {
     primary:

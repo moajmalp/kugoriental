@@ -1,14 +1,25 @@
 import { ReactNode } from 'react'
 
+type Variant = 'default' | 'gradient' | 'glass' | 'white' | 'icon'
+
 interface CardProps {
   children: ReactNode
   className?: string
   hover?: boolean
+  variant?: Variant
 }
 
-export default function Card({ children, className = '', hover = true }: CardProps) {
+const variantClass: Record<Variant, string> = {
+  default: 'card-premium',
+  gradient: 'card-premium card-variant-gradient',
+  glass: 'card-premium card-variant-glass',
+  white: 'card-premium card-variant-white',
+  icon: 'card-premium card-variant-icon',
+}
+
+export default function Card({ children, className = '', hover = true, variant = 'default' }: CardProps) {
   return (
-    <div className={`card-premium ${hover ? 'hover:shadow-premium-lg hover:-translate-y-1' : ''} ${className}`}>
+    <div className={`${variantClass[variant]} ${hover ? 'hover:shadow-premium-lg hover:-translate-y-1' : ''} ${className}`}>
       {children}
     </div>
   )

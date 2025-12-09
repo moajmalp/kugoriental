@@ -6,6 +6,7 @@ import Footer from '@/components/global/Footer'
 import LeadCapture from '@/components/global/LeadCapture'
 import ScrollToTop from '@/components/global/ScrollToTop'
 import Script from 'next/script'
+import Providers from './providers'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -80,13 +81,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body>
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <LeadCapture />
-        <ScrollToTop />
+        <Providers>
+          <Header />
+          <main className="min-h-screen pt-28">
+            {children}
+          </main>
+          <Footer />
+          <LeadCapture />
+          <ScrollToTop />
+        </Providers>
         <Script
           id="org-jsonld"
           type="application/ld+json"
