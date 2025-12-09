@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  color: #1e293b;
+  background-color: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Premium card styles */
+.card-premium {
+  @apply bg-white rounded-2xl shadow-premium border border-accent-100 transition-all duration-300 hover:shadow-premium-lg hover:-translate-y-1;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:bg-primary-700 hover:shadow-lg active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-secondary-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:bg-secondary-700 hover:shadow-lg active:scale-95;
+}
+
+.btn-outline {
+  @apply border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:bg-primary-600 hover:text-white active:scale-95;
+}
+
+/* Container */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Section spacing */
+.section-padding {
+  @apply py-16 md:py-24 lg:py-32;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 1s ease both;
+}
+.animate-slide-up {
+  animation: slideUp 0.9s ease both;
+}
+.btn-lift {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.btn-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.18);
+}
+.card-premium:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
