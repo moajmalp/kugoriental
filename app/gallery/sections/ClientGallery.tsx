@@ -23,11 +23,10 @@ export default function ClientGallery({ items }: { items: GalleryItem[] }) {
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`px-4 py-2 rounded-full border text-sm font-medium transition-all ${
-              active === cat
+            className={`px-4 py-2 rounded-full border text-sm font-medium transition-all ${active === cat
                 ? 'bg-primary-600 text-white border-primary-600'
-                : 'bg-white text-accent-700 border-accent-200 hover:border-primary-400'
-            }`}
+                : 'bg-white dark:bg-slate-800 text-accent-700 dark:text-slate-200 border-accent-200 dark:border-slate-600 hover:border-primary-400 dark:hover:border-primary-500'
+              }`}
           >
             {cat}
           </button>
@@ -38,7 +37,7 @@ export default function ClientGallery({ items }: { items: GalleryItem[] }) {
         {filtered.map((item, idx) => (
           <div
             key={`${item.src}-${idx}`}
-            className="break-inside-avoid cursor-pointer overflow-hidden rounded-2xl shadow-premium border border-accent-100"
+            className="break-inside-avoid cursor-pointer overflow-hidden rounded-2xl shadow-premium border border-accent-100 dark:border-slate-700 hover:shadow-premium-lg transition-shadow"
             onClick={() => setLightbox(item.src)}
           >
             <div className="relative w-full aspect-[4/3]">
@@ -49,7 +48,7 @@ export default function ClientGallery({ items }: { items: GalleryItem[] }) {
                 className="object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="p-3 text-sm text-accent-600 bg-white">{item.category}</div>
+            <div className="p-3 text-sm text-accent-600 dark:text-slate-300 bg-white dark:bg-slate-800">{item.category}</div>
           </div>
         ))}
       </div>

@@ -64,20 +64,20 @@ export default function Modal({ isOpen, onClose, children, title, size = 'md' }:
       {/* Modal Container */}
       <div className="flex min-h-full items-center justify-center p-4">
         <div
-          className={`relative bg-white rounded-2xl shadow-premium-lg w-full ${sizeClasses[size]} transform transition-all`}
+          className={`relative bg-white dark:bg-slate-900 rounded-2xl shadow-premium-lg w-full ${sizeClasses[size]} transform transition-all border border-accent-100 dark:border-slate-700`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
           {(title || true) && (
-            <div className="flex items-center justify-between p-6 border-b border-accent-100">
+            <div className="flex items-center justify-between p-6 border-b border-accent-100 dark:border-slate-700">
               {title && (
-                <h3 id="modal-title" className="text-xl font-semibold text-accent-900">
+                <h3 id="modal-title" className="text-xl font-semibold text-accent-900 dark:text-white">
                   {title}
                 </h3>
               )}
               <button
                 onClick={onClose}
-                className="text-accent-400 hover:text-accent-600 transition-colors"
+                className="text-accent-400 hover:text-accent-600 dark:text-slate-400 dark:hover:text-white transition-colors"
                 aria-label="Close modal"
               >
                 <svg

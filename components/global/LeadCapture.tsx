@@ -6,14 +6,20 @@ import Image from 'next/image'
 
 const STORAGE_KEY = 'kug_lead_popup_shown'
 
-export default function LeadCapture({ disableStorage = false }: { disableStorage?: boolean }) {
+interface LeadCaptureProps {
+  disableStorage?: boolean
+}
+
+export default function LeadCapture({ disableStorage = false }: LeadCaptureProps) {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    const shown = !disableStorage && typeof window !== 'undefined' && localStorage.getItem(STORAGE_KEY)
-    if (shown) return
+    if (!disableStorage) {
+      const shown = typeof window !== 'undefined' && localStorage.getItem(STORAGE_KEY)
+      if (shown) return
+    }
 
     const timer = setTimeout(() => setOpen(true), 12000)
 
@@ -26,7 +32,7 @@ export default function LeadCapture({ disableStorage = false }: { disableStorage
       clearTimeout(timer)
       document.removeEventListener('mouseleave', handleExitIntent)
     }
-  }, [])
+  }, [disableStorage])
 
   const close = () => {
     setOpen(false)
