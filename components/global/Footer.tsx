@@ -67,7 +67,7 @@ export default function Footer() {
       <div className="h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-emerald-500 animate-gradient" />
 
       {/* Decorative wave */}
-      <div className="h-12 bg-gradient-to-r from-primary-500/10 via-secondary-500/10 to-emerald-500/10 dark:from-primary-500/5 dark:via-secondary-500/5 dark:to-emerald-500/5">
+      <div className="h-12 bg-gradient-to-r from-primary-500/10 via-secondary-500/10 to-emerald-500/10">
         <svg preserveAspectRatio="none" viewBox="0 0 1200 48" className="h-full w-full">
           <defs>
             <linearGradient id="footerWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -84,7 +84,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 dark:from-slate-950 dark:via-black dark:to-slate-950 pt-12 pb-8">
+      <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 pt-12 pb-8">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 

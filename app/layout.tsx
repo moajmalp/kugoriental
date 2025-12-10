@@ -5,6 +5,7 @@ import Header from '@/components/global/Header'
 import Footer from '@/components/global/Footer'
 import LeadCapture from '@/components/global/LeadCapture'
 import ScrollToTop from '@/components/global/ScrollToTop'
+import WhatsAppButton from '@/components/global/WhatsAppButton'
 import Script from 'next/script'
 import Providers from './providers'
 
@@ -89,6 +90,7 @@ export default function RootLayout({
           <Footer />
           <LeadCapture />
           <ScrollToTop />
+          <WhatsAppButton />
         </Providers>
         <Script
           id="org-jsonld"

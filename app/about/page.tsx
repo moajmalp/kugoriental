@@ -40,20 +40,20 @@ const achievements = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-accent-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="min-h-screen bg-gradient-to-b from-white via-accent-50 to-white">
       {/* Hero/About intro */}
-      <section className="section-padding pt-24 bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
+      <section className="section-padding pt-24 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <div className="container-custom grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <p className="text-primary-600 font-semibold">About KUG Oriental Academy</p>
-            <h1 className="text-4xl font-bold text-accent-900 dark:text-white">Our Academy Story</h1>
-            <p className="text-accent-700 dark:text-slate-200 text-lg leading-relaxed">
+            <h1 className="text-4xl font-bold text-accent-900">Our Academy Story</h1>
+            <p className="text-accent-700 text-lg leading-relaxed">
               KUG Oriental Academy is a government-recognized and ISO-certified institution
               dedicated to elevating alternative medicine education. We blend classical healing
               wisdom with modern clinical science, ensuring learners graduate with confidence,
               competence, and globally relevant credentials.
             </p>
-            <p className="text-accent-700 dark:text-slate-200 leading-relaxed">
+            <p className="text-accent-700 leading-relaxed">
               From acupuncture and naturopathy to integrative wellness programs, our curriculum is
               designed with university-recognized certifications, expert faculty, and clinical
               internships across affiliated hospitals and centers.
@@ -70,7 +70,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="absolute -left-6 -top-6 h-24 w-24 rounded-3xl bg-secondary-100 blur-2xl" />
             <div className="absolute -right-10 -bottom-10 h-32 w-32 rounded-3xl bg-primary-100 blur-3xl" />
-            <div className="relative overflow-hidden rounded-3xl shadow-premium-lg border border-accent-100 dark:border-slate-700 bg-white dark:bg-slate-900">
+            <div className="relative overflow-hidden rounded-3xl shadow-premium-lg border border-accent-100 bg-white">
               <Image
                 src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80"
                 alt="Academy story"
@@ -89,8 +89,8 @@ export default function AboutPage() {
         <div className="container-custom grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <div className="space-y-4">
             <p className="text-primary-600 font-semibold">Why Choose Us</p>
-            <h2 className="text-3xl font-bold text-accent-900 dark:text-white">Premium, Evidence-Based Learning</h2>
-            <div className="space-y-3 text-accent-700 dark:text-slate-200 leading-relaxed">
+            <h2 className="text-3xl font-bold text-accent-900">Premium, Evidence-Based Learning</h2>
+            <div className="space-y-3 text-accent-700 leading-relaxed">
               {chooseUs.map((item) => (
                 <div key={item} className="flex items-start space-x-3">
                   <span className="mt-1 h-3 w-3 rounded-full bg-primary-500" />
@@ -113,7 +113,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder note */}
-      <section className="section-padding bg-accent-50 dark:bg-slate-900/60">
+      <section className="section-padding bg-accent-50">
         <div className="container-custom grid lg:grid-cols-[0.5fr_1.5fr] gap-8 items-start">
           <div className="card-premium card-variant-gradient p-6 flex flex-col items-center text-center">
             <div className="h-32 w-32 overflow-hidden rounded-full border-4 border-white shadow-premium-lg mb-4">
@@ -125,19 +125,19 @@ export default function AboutPage() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <h3 className="text-xl font-semibold text-accent-900 dark:text-white">Dr. A. K. Pillai</h3>
-            <p className="text-accent-500 dark:text-slate-300 text-sm">Founder & Academic Director</p>
-            <p className="italic text-accent-600 dark:text-slate-200 text-sm mt-2">“Holistic care with global standards.”</p>
+            <h3 className="text-xl font-semibold text-accent-900">Dr. A. K. Pillai</h3>
+            <p className="text-accent-500 text-sm">Founder & Academic Director</p>
+            <p className="italic text-accent-600 text-sm mt-2">“Holistic care with global standards.”</p>
           </div>
-          <div className="card-premium card-variant-glass p-8 space-y-4 border border-accent-100 dark:border-slate-700">
-            <h3 className="text-2xl font-semibold text-accent-900 dark:text-white">Founder’s Note</h3>
-            <p className="text-accent-700 dark:text-slate-200 leading-relaxed">
+          <div className="card-premium card-variant-glass p-8 space-y-4 border border-accent-100">
+            <h3 className="text-2xl font-semibold text-accent-900">Founder’s Note</h3>
+            <p className="text-accent-700 leading-relaxed">
               “Our vision is to nurture practitioners who honor the depth of ancient healing while
               excelling in modern clinical standards. At KUG Oriental Academy, every learner receives
               mentorship, immersive practice, and pathways to contribute meaningfully to community
               health.”
             </p>
-            <div className="pt-2 text-accent-600 dark:text-slate-300">
+            <div className="pt-2 text-accent-600">
               <p className="font-semibold">Dr. A. K. Pillai</p>
               <p className="text-sm">Signature</p>
             </div>
@@ -150,7 +150,7 @@ export default function AboutPage() {
         <div className="container-custom space-y-8">
           <div className="text-center space-y-3">
             <p className="text-primary-600 font-semibold">Our Team</p>
-            <h2 className="text-3xl font-bold text-accent-900 dark:text-white">Mentors & Practitioners</h2>
+            <h2 className="text-3xl font-bold text-accent-900">Mentors & Practitioners</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {teamMembers.map((member, idx) => (
@@ -164,8 +164,8 @@ export default function AboutPage() {
                   />
                 </div>
                 <CardContent className="p-6 space-y-2">
-                  <h3 className="text-lg font-semibold text-accent-900 dark:text-white">{member.name}</h3>
-                  <p className="text-accent-600 dark:text-slate-300 text-sm">{member.role}</p>
+                  <h3 className="text-lg font-semibold text-accent-900">{member.name}</h3>
+                  <p className="text-accent-600 text-sm">{member.role}</p>
                 </CardContent>
               </Card>
             ))}
@@ -174,20 +174,20 @@ export default function AboutPage() {
       </section>
 
       {/* Achievements */}
-      <section className="section-padding bg-accent-50 dark:bg-slate-900/60">
+      <section className="section-padding bg-accent-50">
         <div className="container-custom space-y-8">
           <div className="text-center space-y-3">
             <p className="text-primary-600 font-semibold">Achievements</p>
-            <h2 className="text-3xl font-bold text-accent-900 dark:text-white">Quality & Recognition</h2>
+            <h2 className="text-3xl font-bold text-accent-900">Quality & Recognition</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {achievements.map((item) => (
               <Card key={item.title} className="h-full" variant="white">
                 <CardHeader>
-                  <h3 className="text-xl font-semibold text-accent-900 dark:text-white">{item.title}</h3>
+                  <h3 className="text-xl font-semibold text-accent-900">{item.title}</h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-accent-700 dark:text-slate-200">{item.desc}</p>
+                  <p className="text-accent-700">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}

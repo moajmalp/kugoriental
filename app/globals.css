@@ -16,17 +16,6 @@
   --card-glow: rgba(14, 165, 233, 0.3);
 }
 
-[data-theme='dark'] {
-  --bg-main: #050915;
-  --bg-surface: #0b1020;
-  --bg-glass: rgba(16, 23, 42, 0.65);
-  --text-main: #e2e8f0;
-  --text-muted: #cbd5e1;
-  --border-soft: #1f2937;
-  --card-glow: rgba(59, 130, 246, 0.4);
-  color-scheme: dark;
-}
-
 * {
   margin: 0;
   padding: 0;
