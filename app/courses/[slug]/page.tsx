@@ -8,57 +8,60 @@ type Props = {
   params: { slug: string }
 }
 
+// Extended Mock Data to match the new Premium Layout requirements
 const courseContent = {
+  title: 'Professional Diploma in Acupuncture', // Default title for demo
   overview:
-    'A comprehensive, evidence-based program blending classical healing with modern clinical practice. Learners gain strong foundations, practical skills, and supervised clinical immersion. This course is designed to provide deep theoretical knowledge combined with extensive hands-on training.',
+    'A comprehensive, evidence-based program blending classical healing with modern clinical practice. Learners gain strong foundations, practical skills, and supervised clinical immersion.',
+  description: [
+    'Our curriculum is meticulously designed to bridge the gap between traditional wisdom and modern healthcare requirements. Students engage in rigorous theoretical study followed by extensive practical application, ensuring they are job-ready upon graduation.',
+    'This course is perfect for those seeking a deep understanding of energy channels, meridian points, and holistic diagnostics. You will learn from seasoned practitioners and gain confidence through real-world case studies.',
+  ],
   whatWillYouLearn: [
-    'Master core principles and safety protocols of holistic medicine.',
-    'Develop diagnostic acumen and create effective treatment plans.',
-    'Gain proficiency through 40+ hours of lab simulations.',
-    'Complete supervised clinical internships at partner hospitals.',
-    'Understand professional ethics and patient management.',
-    'Learn integrative approaches to modern healthcare.',
+    'Master core principles of TCM & Acupuncture',
+    'Develop diagnostic acumen (Pulse & Tongue)',
+    'Needling techniques & safety protocols',
+    'Treatment planning for common ailments',
+    'Anatomy & Physiology relevant to Acupuncture',
+    'Patient management & ethical practice',
   ],
-  level: 'Intermediate',
-  category: 'Holistic Medicine',
-  audience: [
-    'Medical Graduates (MBBS, BAMS, BHMS)',
-    'Physiotherapy Professionals',
-    'Nursing Staff',
-    'Wellness Coaches',
-  ],
+  level: 'Intermediate', // Beginner, Intermediate, Advanced
   provider: {
     name: 'KUG Oriental Academy',
     email: 'admissions@kugoriental.com',
-    logo: 'K', // Placeholder for logo logic
+    logo: '/favicon.svg', // Assuming a placeholder logo exists or use a generic one
   },
-  faq: [
-    { q: 'Is this course recognized?', a: 'Yes, the academy is government-recognized and ISO-certified.' },
-    { q: 'Do I need prior medical background?', a: 'Beginners are supported with foundational modules.' },
-    { q: 'Is there job assistance?', a: 'Career guidance and placement support are provided.' },
+  audience: [
+    'Healthcare Professionals',
+    'Yoga Instructors',
+    'Wellness Therapists',
+    'Medical Students',
   ],
+  category: 'Acupuncture',
+  brochureUrl: '#',
+  thumbnail: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80',
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = params.slug
-  const title = `${slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')}`
+  const slug = params.slug || 'course'
+  // improved title formatting
+  const title = slug.split('-').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 
   return {
-    title,
-    description: `Learn more about ${slug.replace(/-/g, ' ')} course at KUG Oriental Academy.`,
+    title: `${title} | KUG Oriental Academy`,
+    description: `Join the ${title} at KUG Oriental Academy. Master holistic health skills with our premium curriculum.`,
   }
 }
 
 export default function CourseDetailPage({ params }: Props) {
-  const slug = params.slug
-  const title = slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')
+  const slug = params.slug || 'course'
+  const title = slug.split('-').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-gray-900">
       <Script
         id="course-jsonld"
         type="application/ld+json"
-
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -68,7 +71,7 @@ export default function CourseDetailPage({ params }: Props) {
             description: courseContent.overview,
             provider: {
               '@type': 'Organization',
-              name: 'KUG Oriental Academy',
+              name: courseContent.provider.name,
               url: 'https://kugoriental.com',
             },
           }),
@@ -94,15 +97,15 @@ export default function CourseDetailPage({ params }: Props) {
       </section>
 
       {/* 2. Main Course Detail Layout */}
-      <div className="container-custom py-12">
+      <section className="container-custom py-16">
         <div className="grid lg:grid-cols-[2fr_1fr] gap-12">
 
           {/* LEFT SIDE */}
           <div className="space-y-12">
             {/* A. Course Thumbnail Image */}
-            <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl animate-fade-in group">
+            <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl animate-fade-in group border border-gray-100">
               <Image
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80"
+                src={courseContent.thumbnail}
                 alt={title}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -112,14 +115,13 @@ export default function CourseDetailPage({ params }: Props) {
             </div>
 
             {/* B. Short About the Course */}
-            <div className="space-y-4 animate-fade-up">
+            <div className="space-y-6 animate-fade-up">
               <h2 className="text-2xl font-bold text-gray-900">About Course</h2>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                {courseContent.overview}
-              </p>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                Our curriculum is meticulously designed to bridge the gap between traditional wisdom and modern healthcare requirements. Students engage in rigorous theoretical study followed by extensive practical application, ensuring they are job-ready upon graduation.
-              </p>
+              {courseContent.description.map((para, idx) => (
+                <p key={idx} className="text-gray-600 leading-relaxed text-lg">
+                  {para}
+                </p>
+              ))}
             </div>
 
             {/* C. What Will You Learn? */}
@@ -128,7 +130,7 @@ export default function CourseDetailPage({ params }: Props) {
               <ul className="grid md:grid-cols-2 gap-4">
                 {courseContent.whatWillYouLearn.map((item, idx) => (
                   <li key={idx} className="flex items-start space-x-3 bg-gray-50 p-4 rounded-xl border border-gray-100 hover:border-gray-200 transition-colors">
-                    <span className="flex-shrink-0 mt-1 h-5 w-5 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                    <span className="flex-shrink-0 mt-1 h-5 w-5 rounded-full bg-primary-100 flex items-center justify-center text-primary-600">
                       <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
@@ -149,7 +151,7 @@ export default function CourseDetailPage({ params }: Props) {
                 as="link"
                 href="/contact"
                 variant="primary"
-                className="w-full h-14 text-lg shadow-lg shadow-primary-500/25 btn-lift"
+                className="w-full h-14 text-lg shadow-lg shadow-primary-500/25 btn-lift bg-gradient-to-r from-primary-600 to-primary-500"
               >
                 Start Learning
               </Button>
@@ -158,7 +160,7 @@ export default function CourseDetailPage({ params }: Props) {
               <div className="flex items-center justify-between border-b border-gray-100 pb-4">
                 <span className="text-gray-500 font-medium">Level</span>
                 <div className="flex items-center text-gray-900 font-semibold">
-                  <span className="h-2.5 w-2.5 rounded-full bg-amber-500 mr-2" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-secondary-500 mr-2" />
                   {courseContent.level}
                 </div>
               </div>
@@ -166,7 +168,7 @@ export default function CourseDetailPage({ params }: Props) {
               {/* 3. Course Provided By */}
               <div className="flex items-center space-x-4 border-b border-gray-100 pb-4">
                 <div className="h-12 w-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center shadow-sm relative overflow-hidden">
-                  <Image src="/favicon.svg" alt="Academy Logo" fill className="object-contain p-2" />
+                  <Image src={courseContent.provider.logo} alt="Academy Logo" fill className="object-contain p-2" />
                 </div>
                 <div>
                   <p className="font-bold text-gray-900">{courseContent.provider.name}</p>
@@ -196,7 +198,12 @@ export default function CourseDetailPage({ params }: Props) {
               </div>
 
               {/* 6. Course Brochure */}
-              <Button variant="outline" className="w-full group btn-lift">
+              <Button
+                as="link"
+                href={courseContent.brochureUrl}
+                variant="outline"
+                className="w-full justify-center group border-2 hover:bg-primary-50"
+              >
                 <span className="mr-2">Download Brochure</span>
                 <svg className="h-4 w-4 transform group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -204,9 +211,8 @@ export default function CourseDetailPage({ params }: Props) {
               </Button>
             </div>
           </div>
-
         </div>
-      </div>
+      </section>
     </div>
   )
 }

@@ -138,7 +138,7 @@ export default function ContactPage() {
                   required
                 />
                 <Select
-                  placeholdert="Course Interested"
+                  placeholder="Course Interested"
                   options={COURSE_OPTIONS}
                   value={course}
                   onChange={(e) => setCourse(e.target.value)}

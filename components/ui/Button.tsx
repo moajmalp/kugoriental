@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ButtonHTMLAttributes, ReactNode } from 'react'
+import { ButtonHTMLAttributes, ReactNode, MouseEventHandler } from 'react'
 
 type Variant = 'primary' | 'secondary' | 'outline'
 type Size = 'sm' | 'md' | 'lg'
@@ -21,6 +21,7 @@ interface LinkButtonProps extends CommonProps {
   href: string
   target?: string
   rel?: string
+  onClick?: MouseEventHandler<HTMLAnchorElement>
 }
 
 type Props = ButtonProps | LinkButtonProps
@@ -49,9 +50,9 @@ export default function Button(props: Props) {
   const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
 
   if (props.as === 'link') {
-    const { href, target, rel } = props as LinkButtonProps
+    const { href, target, rel, onClick } = props as LinkButtonProps
     return (
-      <Link href={href} target={target} rel={rel} className={classes}>
+      <Link href={href} target={target} rel={rel} className={classes} onClick={onClick}>
         {children}
       </Link>
     )

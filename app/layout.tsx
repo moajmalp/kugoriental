@@ -8,6 +8,8 @@ import ScrollToTop from '@/components/global/ScrollToTop'
 import WhatsAppButton from '@/components/global/WhatsAppButton'
 import Script from 'next/script'
 import Providers from './providers'
+import FloatingButtons from '@/components/global/FloatingButtons'
+import PromoPopup from '@/components/global/PromoPopup'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -80,17 +82,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${poppins.variable} font-sans`}>
         <Providers>
           <Header />
-          <main className="min-h-screen">
-            {children}
-          </main>
+          <main>{children}</main>
+          <FloatingButtons />
+          <PromoPopup />
           <Footer />
-          <LeadCapture />
           <ScrollToTop />
-          <WhatsAppButton />
         </Providers>
         <Script
           id="org-jsonld"
