@@ -18,3 +18,5 @@ export {
     SkeletonCardsGrid,
     SkeletonTestimonials
 } from './Skeleton'
+export { default as CustomCalendar } from './CustomCalendar'
+

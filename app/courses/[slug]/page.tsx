@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Script from 'next/script'
-import { Button, Card, CardContent, CardHeader, CardFooter } from '@/components/ui'
+import { Button } from '@/components/ui'
 
 type Props = {
   params: { slug: string }
@@ -9,35 +10,32 @@ type Props = {
 
 const courseContent = {
   overview:
-    'A comprehensive, evidence-based program blending classical healing with modern clinical practice. Learners gain strong foundations, practical skills, and supervised clinical immersion.',
-  objectives: [
-    'Master core principles and safety protocols.',
-    'Develop diagnostic acumen and treatment planning.',
-    'Gain proficiency through labs and simulated practice.',
-    'Complete supervised clinical internships.',
+    'A comprehensive, evidence-based program blending classical healing with modern clinical practice. Learners gain strong foundations, practical skills, and supervised clinical immersion. This course is designed to provide deep theoretical knowledge combined with extensive hands-on training.',
+  whatWillYouLearn: [
+    'Master core principles and safety protocols of holistic medicine.',
+    'Develop diagnostic acumen and create effective treatment plans.',
+    'Gain proficiency through 40+ hours of lab simulations.',
+    'Complete supervised clinical internships at partner hospitals.',
+    'Understand professional ethics and patient management.',
+    'Learn integrative approaches to modern healthcare.',
   ],
-  curriculum: [
-    'Module 1: Foundations & Principles',
-    'Module 2: Diagnostics & Assessment',
-    'Module 3: Treatment Protocols & Safety',
-    'Module 4: Lab Simulations & Practical Skills',
-    'Module 5: Clinical Internship & Case Logging',
-    'Module 6: Professional Practice & Ethics',
+  level: 'Intermediate',
+  category: 'Holistic Medicine',
+  audience: [
+    'Medical Graduates (MBBS, BAMS, BHMS)',
+    'Physiotherapy Professionals',
+    'Nursing Staff',
+    'Wellness Coaches',
   ],
-  eligibility: 'Open to graduates and healthcare professionals. Bridge support for beginners.',
-  duration: '6-12 months (flexible pathways)',
-  fees: 'Fees details to be provided during counseling (placeholder)',
-  internship: 'Supervised clinical internships at partner clinics and hospitals.',
+  provider: {
+    name: 'KUG Oriental Academy',
+    email: 'admissions@kugoriental.com',
+    logo: 'K', // Placeholder for logo logic
+  },
   faq: [
     { q: 'Is this course recognized?', a: 'Yes, the academy is government-recognized and ISO-certified.' },
     { q: 'Do I need prior medical background?', a: 'Beginners are supported with foundational modules.' },
     { q: 'Is there job assistance?', a: 'Career guidance and placement support are provided.' },
-    { q: 'Can I study online?', a: 'Hybrid and online-friendly modules are available for select batches.' },
-  ],
-  related: [
-    'Naturopathy & Yoga',
-    'Holistic Health Care',
-    'Ayurveda Panchakarma',
   ],
 }
 
@@ -48,14 +46,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description: `Learn more about ${slug.replace(/-/g, ' ')} course at KUG Oriental Academy.`,
-    openGraph: {
-      title: `${title} | KUG Oriental Academy`,
-      description: `Learn more about ${slug.replace(/-/g, ' ')} course at KUG Oriental Academy.`,
-    },
-    twitter: {
-      title: `${title} | KUG Oriental Academy`,
-      description: `Learn more about ${slug.replace(/-/g, ' ')} course at KUG Oriental Academy.`,
-    },
   }
 }
 
@@ -64,10 +54,11 @@ export default function CourseDetailPage({ params }: Props) {
   const title = slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')
 
   return (
-    <div className="min-h-screen bg-accent-50">
+    <div className="min-h-screen bg-white">
       <Script
         id="course-jsonld"
         type="application/ld+json"
+
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -83,146 +74,139 @@ export default function CourseDetailPage({ params }: Props) {
           }),
         }}
       />
-      <Script
-        id="faq-jsonld"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: courseContent.faq.map((item) => ({
-              '@type': 'Question',
-              name: item.q,
-              acceptedAnswer: { '@type': 'Answer', text: item.a },
-            })),
-          }),
-        }}
-      />
-      <div className="container-custom section-padding space-y-10">
-        <div className="space-y-3">
-          <p className="text-primary-600 font-semibold">Course Details</p>
-          <h1 className="text-4xl font-bold text-accent-900">{title}</h1>
-          <p className="text-accent-700 max-w-3xl">{courseContent.overview}</p>
-          <div className="flex gap-3 flex-wrap">
-            <Button as="link" href="/contact" variant="primary">
-              Apply Now
-            </Button>
-            <Button as="link" href="/courses" variant="outline">
-              Back to Courses
-            </Button>
-          </div>
+
+      {/* 1. Premium Header Section */}
+      <section className="bg-white pt-28 pb-12 border-b border-gray-100">
+        <div className="container-custom text-center space-y-4">
+          {/* Title */}
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight capitalize mb-4">
+            {title}
+          </h1>
+          {/* Breadcrumbs */}
+          <nav className="flex items-center justify-center text-sm text-gray-500 space-x-2">
+            <Link href="/" className="hover:text-primary-600 transition-colors">Home</Link>
+            <span>&gt;</span>
+            <Link href="/courses" className="hover:text-primary-600 transition-colors">Courses</Link>
+            <span>&gt;</span>
+            <span className="text-gray-900 font-medium capitalize">{title}</span>
+          </nav>
         </div>
+      </section>
 
-        <div className="grid lg:grid-cols-[1.4fr_0.8fr] gap-8">
-          <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <h3 className="text-xl font-semibold text-accent-900">Objectives</h3>
-              </CardHeader>
-              <CardContent className="space-y-3 text-accent-700">
-                {courseContent.objectives.map((item) => (
-                  <div key={item} className="flex items-start space-x-3">
-                    <span className="mt-1 h-3 w-3 rounded-full bg-primary-500" />
-                    <p>{item}</p>
-                  </div>
+      {/* 2. Main Course Detail Layout */}
+      <div className="container-custom py-12">
+        <div className="grid lg:grid-cols-[2fr_1fr] gap-12">
+
+          {/* LEFT SIDE */}
+          <div className="space-y-12">
+            {/* A. Course Thumbnail Image */}
+            <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl animate-fade-in group">
+              <Image
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80"
+                alt={title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+
+            {/* B. Short About the Course */}
+            <div className="space-y-4 animate-fade-up">
+              <h2 className="text-2xl font-bold text-gray-900">About Course</h2>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                {courseContent.overview}
+              </p>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                Our curriculum is meticulously designed to bridge the gap between traditional wisdom and modern healthcare requirements. Students engage in rigorous theoretical study followed by extensive practical application, ensuring they are job-ready upon graduation.
+              </p>
+            </div>
+
+            {/* C. What Will You Learn? */}
+            <div className="space-y-6 animate-fade-up animation-delay-100">
+              <h2 className="text-2xl font-bold text-gray-900">What Will You Learn?</h2>
+              <ul className="grid md:grid-cols-2 gap-4">
+                {courseContent.whatWillYouLearn.map((item, idx) => (
+                  <li key={idx} className="flex items-start space-x-3 bg-gray-50 p-4 rounded-xl border border-gray-100 hover:border-gray-200 transition-colors">
+                    <span className="flex-shrink-0 mt-1 h-5 w-5 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <span className="text-gray-700 font-medium">{item}</span>
+                  </li>
                 ))}
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <h3 className="text-xl font-semibold text-accent-900">Curriculum</h3>
-              </CardHeader>
-              <CardContent className="space-y-3 text-accent-700">
-                {courseContent.curriculum.map((module) => (
-                  <div key={module} className="flex items-start space-x-3">
-                    <span className="mt-1 h-3 w-3 rounded-full bg-secondary-500" />
-                    <p>{module}</p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <h3 className="text-xl font-semibold text-accent-900">Clinical Internship</h3>
-              </CardHeader>
-              <CardContent className="text-accent-700">
-                {courseContent.internship}
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <h3 className="text-xl font-semibold text-accent-900">FAQs</h3>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {courseContent.faq.map((item) => (
-                  <details key={item.q} className="card-premium p-4 bg-white">
-                    <summary className="cursor-pointer text-accent-900 font-semibold">{item.q}</summary>
-                    <p className="text-accent-700 mt-2">{item.a}</p>
-                  </details>
-                ))}
-              </CardContent>
-            </Card>
+              </ul>
+            </div>
           </div>
 
-          <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <h3 className="text-xl font-semibold text-accent-900">Eligibility</h3>
-              </CardHeader>
-              <CardContent className="text-accent-700 space-y-3">
-                <p>{courseContent.eligibility}</p>
-                <p className="text-sm text-accent-500">Bridge modules available for beginners.</p>
-              </CardContent>
-            </Card>
+          {/* RIGHT SIDE (Sidebar) */}
+          <div className="space-y-8">
+            <div className="bg-white rounded-3xl shadow-premium p-8 border border-gray-100 sticky top-28 space-y-8 animate-fade-up animation-delay-200">
 
-            <Card>
-              <CardContent className="space-y-3 text-accent-700">
-                <div className="flex items-center justify-between">
-                  <p className="font-semibold text-accent-900">Duration</p>
-                  <p>{courseContent.duration}</p>
+              {/* 1. Start Learning Button */}
+              <Button
+                as="link"
+                href="/contact"
+                variant="primary"
+                className="w-full h-14 text-lg shadow-lg shadow-primary-500/25 btn-lift"
+              >
+                Start Learning
+              </Button>
+
+              {/* 2. Course Level */}
+              <div className="flex items-center justify-between border-b border-gray-100 pb-4">
+                <span className="text-gray-500 font-medium">Level</span>
+                <div className="flex items-center text-gray-900 font-semibold">
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-500 mr-2" />
+                  {courseContent.level}
                 </div>
-                <div className="flex items-center justify-between">
-                  <p className="font-semibold text-accent-900">Fees</p>
-                  <p>{courseContent.fees}</p>
+              </div>
+
+              {/* 3. Course Provided By */}
+              <div className="flex items-center space-x-4 border-b border-gray-100 pb-4">
+                <div className="h-12 w-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center shadow-sm relative overflow-hidden">
+                  <Image src="/favicon.svg" alt="Academy Logo" fill className="object-contain p-2" />
                 </div>
-              </CardContent>
-            </Card>
+                <div>
+                  <p className="font-bold text-gray-900">{courseContent.provider.name}</p>
+                  <a href={`mailto:${courseContent.provider.email}`} className="text-sm text-primary-600 hover:underline">
+                    {courseContent.provider.email}
+                  </a>
+                </div>
+              </div>
 
-            <Card>
-              <CardHeader>
-                <h3 className="text-xl font-semibold text-accent-900">Download Brochure</h3>
-              </CardHeader>
-              <CardFooter className="pt-0">
-                <Button as="link" href="#" variant="primary" size="sm">
-                  Download PDF
-                </Button>
-              </CardFooter>
-            </Card>
+              {/* 4. Audience */}
+              <div className="space-y-3 border-b border-gray-100 pb-4">
+                <span className="text-gray-500 font-medium block">Who is this for?</span>
+                <ul className="space-y-2">
+                  {courseContent.audience.map((aud, idx) => (
+                    <li key={idx} className="flex items-center text-gray-700 text-sm">
+                      <span className="h-1.5 w-1.5 rounded-full bg-gray-300 mr-2" />
+                      {aud}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            <Card>
-              <CardHeader>
-                <h3 className="text-xl font-semibold text-accent-900">Related Courses</h3>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {courseContent.related.map((rel) => (
-                  <Link
-                    key={rel}
-                    href={`/courses/${rel.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
-                    className="text-primary-600 hover:underline font-medium block"
-                  >
-                    {rel}
-                  </Link>
-                ))}
-              </CardContent>
-            </Card>
+              {/* 5. Course Category */}
+              <div className="flex items-center justify-between border-b border-gray-100 pb-4">
+                <span className="text-gray-500 font-medium">Category</span>
+                <span className="text-gray-900 font-semibold">{courseContent.category}</span>
+              </div>
+
+              {/* 6. Course Brochure */}
+              <Button variant="outline" className="w-full group btn-lift">
+                <span className="mr-2">Download Brochure</span>
+                <svg className="h-4 w-4 transform group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </Button>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
   )
 }
-

@@ -30,12 +30,12 @@ const brochures = [
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-accent-50 via-white to-accent-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="min-h-screen bg-gradient-to-b from-accent-50 via-white to-accent-50">
       <div className="container-custom section-padding pt-24 space-y-10">
         <div className="text-center space-y-3">
           <p className="text-primary-600 font-semibold">Resources</p>
-          <h1 className="text-4xl font-bold text-accent-900 dark:text-white">Downloadable Brochures</h1>
-          <p className="text-accent-700 dark:text-slate-300 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-accent-900">Downloadable Brochures</h1>
+          <p className="text-accent-700 max-w-3xl mx-auto">
             Access program details, internship guides, and admissions information in one place.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function ResourcesPage() {
                 />
               </div>
               <CardHeader>
-                <h3 className="text-lg font-semibold text-accent-900 dark:text-white">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-accent-900">{item.title}</h3>
               </CardHeader>
               <CardContent className="pt-0">
                 <Button as="link" href={item.link} variant="primary" size="sm">

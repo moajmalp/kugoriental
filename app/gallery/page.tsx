@@ -28,12 +28,12 @@ const items = [
 
 export default function GalleryPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-accent-50 via-white to-accent-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="min-h-screen bg-gradient-to-b from-accent-50 via-white to-accent-50">
       <div className="container-custom section-padding pt-24 space-y-8">
         <div className="text-center space-y-3">
           <p className="text-primary-600 font-semibold">Gallery</p>
-          <h1 className="text-4xl font-bold text-accent-900 dark:text-white">Campus, Clinics & Events</h1>
-          <p className="text-accent-700 dark:text-slate-300 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-accent-900">Campus, Clinics & Events</h1>
+          <p className="text-accent-700 max-w-3xl mx-auto">
             Explore moments from our campus life, modern labs, clinical training, and community events.
           </p>
         </div>

@@ -57,12 +57,12 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-accent-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="min-h-screen bg-gradient-to-b from-white via-accent-50 to-white">
       <div className="container-custom section-padding pt-24 space-y-10">
         <div className="space-y-3 text-center">
           <p className="text-primary-600 font-semibold">Insights</p>
-          <h1 className="text-4xl font-bold text-accent-900 dark:text-white">From Our Blog</h1>
-          <p className="text-accent-700 dark:text-slate-300 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-accent-900">From Our Blog</h1>
+          <p className="text-accent-700 max-w-3xl mx-auto">
             Premium perspectives on integrative health, clinical training, and holistic wellness careers.
           </p>
         </div>
@@ -85,19 +85,19 @@ export default function BlogPage() {
                 />
               </div>
               <CardHeader className="space-y-2 pb-2">
-                <p className="text-sm text-accent-500 dark:text-slate-400 flex items-center gap-2">
+                <p className="text-sm text-accent-500 flex items-center gap-2">
                   <span>{post.date}</span>
                   <span>•</span>
                   <span>{post.read}</span>
                 </p>
-                <h3 className="text-xl font-semibold text-accent-900 dark:text-white leading-snug">
+                <h3 className="text-xl font-semibold text-accent-900 leading-snug">
                   {post.title}
                 </h3>
               </CardHeader>
               <CardContent className="pt-0">
                 <Link
                   href="/blog"
-                  className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-300 font-semibold hover:underline"
+                  className="inline-flex items-center gap-2 text-primary-600 font-semibold hover:underline"
                 >
                   Read More
                   <span aria-hidden>→</span>
