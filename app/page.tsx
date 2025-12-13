@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button, Card, CardContent, CardHeader, CardFooter } from '@/components/ui'
 import AnimatedCounter from '@/components/home/AnimatedCounter'
-import TestimonialsCarousel from '@/components/home/TestimonialsCarousel'
 import FaqAccordion from '@/components/home/FaqAccordion'
 import HeroSlider from '@/components/home/HeroSlider'
 
@@ -241,19 +240,22 @@ export default function HomePage() {
               professionals.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service) => (
-              <Card key={service} className="p-5 bg-white/80 dark:bg-slate-900/70" variant="glass">
-                <div className="flex items-start space-x-3">
-                  <span className="h-10 w-10 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white font-semibold shadow-lg">
-                    ✦
-                  </span>
-                  <div>
-                    <p className="font-semibold text-accent-900 dark:text-white">{service}</p>
-                    <p className="text-sm text-accent-600 dark:text-slate-300 mt-1">Specialized modules & practical labs</p>
-                  </div>
+              <div
+                key={service}
+                className="group bg-white dark:bg-slate-800 rounded-[1.5rem] p-6 shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-slate-700 flex items-start"
+              >
+                <div className="shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                  <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                  </svg>
                 </div>
-              </Card>
+                <div className="ml-4">
+                  <h3 className="font-bold text-gray-900 dark:text-white text-lg leading-tight mb-1">{service}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Specialized modules & practical labs</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -289,17 +291,63 @@ export default function HomePage() {
           </div>
           <div className="relative">
             <div className="absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-primary-400 to-secondary-400 hidden md:block" />
-            <div className="grid md:grid-cols-3 gap-6">
-              {chooseUs.map((item, idx) => (
-                <Card key={item} className="h-full" variant="white">
-                  <CardContent className="flex items-start space-x-3">
-                    <span className="h-9 w-9 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white font-semibold shadow-lg">
-                      {idx + 1}
-                    </span>
-                    <p className="text-accent-800 dark:text-slate-200">{item}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+              {/* 1. Large Text Card (Top Left) */}
+              <div className="md:col-span-1 md:row-span-1 rounded-[2rem] bg-[#E8E6E1] dark:bg-slate-800 p-8 flex flex-col justify-between shadow-sm">
+                <div>
+                  <h3 className="text-2xl font-bold text-accent-900 dark:text-white leading-tight mb-2">Government Recognized & ISO Certified</h3>
+                  <p className="text-accent-700 dark:text-slate-300 text-sm">Our unwavering quality ensures you receive top-tier education meeting global standards.</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-bold text-slate-800 dark:text-white">100%</p>
+                  <p className="text-sm font-medium text-slate-600 dark:text-slate-400">Valid Certification</p>
+                </div>
+              </div>
+
+              {/* 2. Tall Image Card (Center) */}
+              <div className="md:col-span-1 md:row-span-2 rounded-[2rem] overflow-hidden relative group shadow-md">
+                <Image
+                  src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1000&auto=format&fit=crop"
+                  alt="Clinical Practice"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-8 text-white">
+                  <p className="text-4xl font-bold mb-1">98%</p>
+                  <p className="text-lg font-medium opacity-90">Placement Rate</p>
+                  <p className="text-sm text-gray-300 mt-2 line-clamp-2">You can rely on us to launch your career smoothly without delays.</p>
+                </div>
+              </div>
+
+              {/* 3. Image Card (Top Right) */}
+              <div className="md:col-span-1 md:row-span-1 rounded-[2rem] overflow-hidden relative group shadow-sm">
+                <Image
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
+                  alt="Modern Labs"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
+              </div>
+
+              {/* 4. Image/Feature Card (Bottom Left) */}
+              <div className="md:col-span-1 md:row-span-1 rounded-[2rem] overflow-hidden relative group shadow-sm">
+                <Image
+                  src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=800&auto=format&fit=crop"
+                  alt="Expert Faculty"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              </div>
+
+              {/* 5. Stats Card (Bottom Right) */}
+              <div className="md:col-span-1 md:row-span-1 rounded-[2rem] bg-[#E0E7FF] dark:bg-slate-700 p-8 flex flex-col justify-end shadow-sm">
+                <h3 className="text-4xl font-bold text-indigo-900 dark:text-white mb-1">300+</h3>
+                <p className="text-lg font-semibold text-indigo-800 dark:text-slate-200">Successful Grads</p>
+                <p className="text-sm text-indigo-600 dark:text-slate-300 mt-2">Join countless satisfied students who've relied on our consistent, expert training.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -367,26 +415,70 @@ export default function HomePage() {
             <p className="text-primary-600 font-semibold">Training Process</p>
             <h2 className="text-3xl font-bold text-accent-900 dark:text-white">From Foundation to Practice</h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-4">
-            {[
-              { title: 'Foundational Theory', desc: 'Core sciences, principles, and protocols.' },
-              { title: 'Practical Lab Work', desc: 'Hands-on training with modern equipment.' },
-              { title: 'Clinical Internship', desc: 'Supervised rotations in partner clinics.' },
-              { title: 'Career Placement', desc: 'Guidance, mentorship, and job support.' },
-            ].map((step, idx) => (
-              <Card key={step.title} className="h-full relative overflow-hidden" variant="gradient">
-                <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-primary-400 to-secondary-400" />
-                <CardHeader className="flex items-center space-x-3">
-                  <span className="h-9 w-9 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 text-white font-semibold flex items-center justify-center shadow-lg">
-                    {idx + 1}
-                  </span>
-                  <h3 className="text-lg font-semibold text-accent-900 dark:text-white">{step.title}</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-accent-700 dark:text-slate-200 text-sm">{step.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="relative pt-12">
+            {/* Connecting Line (Desktop) */}
+            <div className="hidden md:block absolute top-[60px] left-[10%] right-[10%] h-0.5 bg-gray-200 dark:bg-slate-700" />
+
+            <div className="grid md:grid-cols-4 gap-8 relative z-10">
+              {[
+                {
+                  title: 'Foundational Theory',
+                  desc: 'Core sciences, principles, and protocols.',
+                  icon: (
+                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  )
+                },
+                {
+                  title: 'Practical Lab Work',
+                  desc: 'Hands-on training with modern equipment.',
+                  icon: (
+                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  )
+                },
+                {
+                  title: 'Clinical Internship',
+                  desc: 'Supervised rotations in partner clinics.',
+                  icon: (
+                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  )
+                },
+                {
+                  title: 'Career Placement',
+                  desc: 'Guidance, mentorship, and job support.',
+                  icon: (
+                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  )
+                },
+              ].map((step, idx) => (
+                <div key={step.title} className="flex flex-col items-center text-center group">
+                  <div className="relative mb-6">
+                    <div className="h-28 w-28 rounded-full border-2 border-primary-100 dark:border-primary-900 group-hover:border-primary-500 transition-colors duration-300 flex items-center justify-center bg-white dark:bg-slate-800 z-10 relative shadow-sm">
+                      <div className="h-24 w-24 rounded-full bg-primary-50 dark:bg-primary-900/20 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/40 transition-colors duration-300 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                        {step.icon}
+                      </div>
+                    </div>
+                    {/* Connecting Arrow for mobile */}
+                    {idx < 3 && (
+                      <div className="md:hidden absolute bottom-[-32px] left-1/2 -translate-x-1/2 text-gray-300">
+                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-[200px]">{step.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -403,15 +495,75 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding">
-        <div className="container-custom space-y-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <p className="text-primary-600 font-semibold">Testimonials</p>
-              <h2 className="text-3xl font-bold text-accent-900 dark:text-white">Learners Who Trusted Us</h2>
+      <section className="section-padding overflow-hidden">
+        <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="relative space-y-6">
+            <div className="absolute -top-20 left-10 hidden lg:block">
+              <svg className="h-12 w-12 text-yellow-400 rotate-12 absolute -right-6 top-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg className="h-16 w-16 text-indigo-400 absolute left-0 top-4 -z-10" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
+                <path d="M10 50 Q 25 20 40 50 T 70 50 T 100 50" strokeLinecap="round" />
+              </svg>
+            </div>
+
+            <div className="pt-8">
+              <h2 className="text-5xl font-bold text-gray-900 dark:text-white leading-[1.15]">What Our<br />Customers Says</h2>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed max-w-md">
+              Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common.
+            </p>
+            <Button
+              as="link"
+              href="/testimonials"
+              className="bg-gradient-to-r from-purple-500 to-orange-400 hover:from-purple-600 hover:to-orange-500 border-none rounded-full px-8 py-6 text-lg shadow-lg shadow-purple-500/30 text-white transition-all transform hover:scale-105"
+            >
+              View More
+            </Button>
+          </div>
+
+          {/* Right Cards Stack */}
+          <div className="relative space-y-6 py-10">
+            {/* Vertical Decor Line */}
+            <div className="absolute left-[3.5rem] top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-50 via-purple-100 to-transparent dark:from-slate-700 dark:via-slate-800 hidden sm:block -z-10" />
+
+            {/* Card 1 */}
+            <div className="relative bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 flex gap-4 ml-0 sm:ml-12 hover:-translate-x-2 transition-transform duration-300">
+              <Image src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop" width={60} height={60} alt="Mehwish" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
+              <div>
+                <div className="flex justify-between items-start">
+                  <h4 className="font-bold text-gray-900 dark:text-white">Mehwish</h4>
+                  <span className="text-gray-300 text-2xl leading-none font-serif">“</span>
+                </div>
+                <p className="text-gray-500 text-sm mt-1 leading-snug">Compliment interested discretion estimating on stimulated apartments oh.</p>
+              </div>
+            </div>
+
+            {/* Card 2 (Active/Highlighted) */}
+            <div className="relative bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl shadow-purple-100/50 dark:shadow-none border-l-4 border-l-purple-600 flex gap-4 -ml-4 sm:ml-0 scale-105 z-10 transition-transform">
+              <Image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" width={60} height={60} alt="Elizabeth" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <h4 className="font-bold text-gray-900 dark:text-white">Elizabeth Jeff</h4>
+                  <span className="text-purple-500 text-3xl leading-none font-serif">“</span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 text-sm font-medium leading-snug">Dear so sing when in find read of call. As distrusts behaviour abilities defective is.</p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="relative bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 flex gap-4 ml-0 sm:ml-12 hover:-translate-x-2 transition-transform duration-300">
+              <Image src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" width={60} height={60} alt="Emily" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
+              <div>
+                <div className="flex justify-between items-start">
+                  <h4 className="font-bold text-gray-900 dark:text-white">Emily Thomas</h4>
+                  <span className="text-gray-300 text-2xl leading-none font-serif">“</span>
+                </div>
+                <p className="text-gray-500 text-sm mt-1 leading-snug">Never at water me might. On formed merits hunted unable merely by mr whence or.</p>
+              </div>
             </div>
           </div>
-          <TestimonialsCarousel items={testimonials} />
         </div>
       </section>
 
