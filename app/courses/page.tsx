@@ -16,65 +16,9 @@ export const metadata: Metadata = {
   },
 }
 
-const courses = [
-  {
-    name: 'Professional Diploma in Acupuncture',
-    img: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Ayurveda Panchakarma',
-    img: 'https://images.unsplash.com/photo-1556229010-aa3f7ff66b43?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Medical Laboratory Technology',
-    img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Cupping Therapy',
-    img: 'https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Naturopathy & Yoga',
-    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Holistic Health Care',
-    img: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Kalaripayattu',
-    img: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Acupressure',
-    img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Herbal Medicine & Pharmacology',
-    img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Clinical Nutrition & Dietetics',
-    img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    name: 'Physiotherapy Basics',
-    img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=900&q=80&sig=2',
-  },
-  {
-    name: 'Reflexology & Wellness',
-    img: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=900&q=80&sig=3',
-  },
-  {
-    name: 'Integrative Wellness Coaching',
-    img: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80',
-  },
-].map((course) => ({
-  ...course,
-  desc: 'Comprehensive curriculum with practical labs and clinical exposure.',
-  duration: '6-12 months (placeholder)',
-  slug: course.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
-}))
+import { courses } from '@/lib/courses'
+
+/* Remove hardcoded courses array */
 
 const filters = [
   { label: 'Category', options: ['All', 'Diploma', 'Certification', 'Workshop'] },
@@ -128,14 +72,17 @@ export default function CoursesPage() {
                 />
               </div>
               <CardHeader>
-                <h3 className="text-xl font-semibold text-accent-900 dark:text-white">{course.name}</h3>
+                <h3 className="text-xl font-semibold text-accent-900 dark:text-white leading-tight">{course.name}</h3>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-accent-700 dark:text-slate-200">{course.desc}</p>
-                <p className="text-sm text-accent-500 dark:text-slate-400">{course.duration}</p>
+                <p className="text-accent-700 dark:text-slate-200 line-clamp-2">{course.shortDesc}</p>
+                <div className="flex items-center gap-2 text-sm text-accent-500 dark:text-slate-400">
+                  <span className="bg-primary-50 dark:bg-slate-800 px-2 py-1 rounded-md text-primary-700 dark:text-primary-300 font-medium text-xs border border-primary-100 dark:border-slate-700">{course.details.duration}</span>
+                  <span className="bg-secondary-50 dark:bg-slate-800 px-2 py-1 rounded-md text-secondary-700 dark:text-secondary-300 font-medium text-xs border border-secondary-100 dark:border-slate-700">{course.level}</span>
+                </div>
               </CardContent>
               <CardFooter className="pt-0">
-                <Button as="link" href={`/courses/${course.slug}`} variant="primary" size="sm">
+                <Button as="link" href={`/courses/${course.slug}`} variant="primary" size="sm" className="w-full">
                   Course Details
                 </Button>
               </CardFooter>

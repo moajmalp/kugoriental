@@ -165,9 +165,7 @@ export default function HomePage() {
               Shaping Holistic Health Careers
             </h2>
             <p className="text-accent-700 dark:text-slate-200 text-lg leading-relaxed">
-              A government-recognized and ISO-certified academy delivering integrative health
-              education with university-recognized certifications, expert faculty, and immersive
-              clinical training.
+              KUG Oriental Academy is a government-recognized, ISO-certified institution dedicated to advancing education in alternative medicine. Our mission is to blend ancient healing traditions with modern science, shaping professionals who lead in Acupuncture, Ayurveda, Yoga, Naturopathy, and Lab Technology.
             </p>
             <div className="grid sm:grid-cols-2 gap-3 pt-4">
               {aboutHighlights.map((item) => (
