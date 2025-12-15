@@ -23,6 +23,36 @@ export type Course = {
 
 export const courses: Course[] = [
     {
+        id: 'd-acu',
+        slug: 'professional-diploma-in-acupuncture',
+        name: 'Professional Diploma in Acupuncture (D. Acu)',
+        level: 'Intermediate',
+        category: 'Acupuncture',
+        shortDesc: 'Comprehensive professional program integrating ancient and modern acupuncture.',
+        overview: 'A comprehensive professional program integrating ancient Chinese acupuncture with modern medical understanding.',
+        img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80&sig=5',
+        audience: [
+            'Individuals seeking a career in acupuncture and traditional healing'
+        ],
+        whatWillYouLearn: [
+            'Acupuncture theory & meridians',
+            'Pain management & energy balancing',
+            'Pulse & tongue diagnosis',
+            'Electro-acupuncture & moxibustion',
+            '90 Days hands-on clinical practice'
+        ],
+        details: {
+            programCode: 'D. Acu',
+            duration: '1 Year',
+            eligibility: 'Plus Two or Any Degree',
+            examination: '2 Theory Papers + 1 Practical',
+            totalMarks: '300',
+            practicalTraining: '90 Days',
+            medium: 'Malayalam & English',
+            fee: '₹40,000'
+        }
+    },
+    {
         id: 'cct',
         slug: 'certificate-in-cupping-therapy',
         name: 'Certificate in Cupping Therapy',
@@ -392,36 +422,6 @@ export const courses: Course[] = [
             practicalTraining: 'No Practical',
             medium: 'Malayalam & English',
             fee: '₹5,000'
-        }
-    },
-    {
-        id: 'd-acu',
-        slug: 'professional-diploma-in-acupuncture',
-        name: 'Professional Diploma in Acupuncture (D. Acu)',
-        level: 'Intermediate',
-        category: 'Acupuncture',
-        shortDesc: 'Comprehensive professional program integrating ancient and modern acupuncture.',
-        overview: 'A comprehensive professional program integrating ancient Chinese acupuncture with modern medical understanding.',
-        img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80&sig=5',
-        audience: [
-            'Individuals seeking a career in acupuncture and traditional healing'
-        ],
-        whatWillYouLearn: [
-            'Acupuncture theory & meridians',
-            'Pain management & energy balancing',
-            'Pulse & tongue diagnosis',
-            'Electro-acupuncture & moxibustion',
-            '90 Days hands-on clinical practice'
-        ],
-        details: {
-            programCode: 'D. Acu',
-            duration: '1 Year',
-            eligibility: 'Plus Two or Any Degree',
-            examination: '2 Theory Papers + 1 Practical',
-            totalMarks: '300',
-            practicalTraining: '90 Days',
-            medium: 'Malayalam & English',
-            fee: '₹40,000'
         }
     }
 ]

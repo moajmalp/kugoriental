@@ -32,7 +32,7 @@ export default function ContactPage() {
               <div className="mt-6 space-y-5">
                 {/* Address */}
                 <a
-                  href="https://maps.google.com/?q=KUG Oriental Academy"
+                  href="https://maps.app.goo.gl/kmFJkaiSNDWyCYuR8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start space-x-4 text-gray-600 group hover:text-primary-600 transition-colors"
@@ -45,14 +45,14 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-900">Visit Us</p>
-                    <p className="text-sm mt-0.5">KUG Oriental Academy, Kerala, India</p>
+                    <p className="text-sm mt-0.5">Thoppil square, Malappuram road, Kottakkal, Kerala 676503, India</p>
                     <span className="text-xs text-primary-500 font-medium mt-1 inline-block border-b border-primary-200 group-hover:border-primary-500 transition-all">Open in Maps</span>
                   </div>
                 </a>
 
                 {/* Phone */}
                 <a
-                  href="tel:+919526271193"
+                  href="tel:+918921728267"
                   className="flex items-start space-x-4 text-gray-600 group hover:text-secondary-600 transition-colors"
                 >
                   <div className="h-10 w-10 rounded-full bg-secondary-50 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary-100 transition-colors">
@@ -62,14 +62,14 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-900">Call Us</p>
-                    <p className="text-sm mt-0.5">+91 9526271193</p>
+                    <p className="text-sm mt-0.5">+91 892 172 8267</p>
                     <span className="text-xs text-secondary-500 font-medium mt-1 inline-block border-b border-secondary-200 group-hover:border-secondary-500 transition-all">Click to Dial</span>
                   </div>
                 </a>
 
                 {/* Email */}
                 <a
-                  href="mailto:admissions@kugoriental.com"
+                  href="mailto:info@kugoriental.com"
                   className="flex items-start space-x-4 text-gray-600 group hover:text-emerald-600 transition-colors"
                 >
                   <div className="h-10 w-10 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-100 transition-colors">
@@ -79,14 +79,14 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-900">Email Us</p>
-                    <p className="text-sm mt-0.5">admissions@kugoriental.com</p>
+                    <p className="text-sm mt-0.5">info@kugoriental.com</p>
                     <span className="text-xs text-emerald-500 font-medium mt-1 inline-block border-b border-emerald-200 group-hover:border-emerald-500 transition-all">Send Email</span>
                   </div>
                 </a>
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/9526271193"
+                  href="https://wa.me/918921728267"
                   className="flex items-start space-x-4 text-gray-600 group hover:text-green-600 transition-colors"
                 >
                   <div className="h-10 w-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">

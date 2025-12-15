@@ -26,11 +26,49 @@ const chooseUs = [
   'Modern simulation labs and advanced training facilities',
 ]
 
-const teamMembers = Array.from({ length: 6 }).map((_, i) => ({
-  name: `Team Member ${i + 1}`,
-  role: 'Senior Faculty',
-  img: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=600&q=80',
-}))
+const academicCouncil = [
+  {
+    name: 'Dr. Bahja Janu CP',
+    role: 'Academic Council Member',
+    img: '/team/dr-bahja.jpg',
+  },
+  {
+    name: 'Prof. M Haroon M',
+    role: 'Academic Council Member',
+    img: '/team/prof-haroon.jpg',
+  },
+  {
+    name: 'U Keshav Dev',
+    role: 'Academic Council Member',
+    img: '/team/keshav-dev.jpg',
+  },
+  {
+    name: 'Dr. Farseena E',
+    role: 'Academic Council Member',
+    img: '/team/dr-farseena.jpg',
+  },
+]
+
+const examinationBoard = [
+  {
+    name: 'Dr. Khadeeja Nargees',
+    role: 'Examination Board Member',
+    img: '/team/dr-khadeeja.jpg',
+  },
+]
+
+const administrationBoard = [
+  {
+    name: 'Muhammed Aboo Thahir K',
+    role: 'Administration Board Member',
+    img: '/team/muhammed-thahir.jpg',
+  },
+  {
+    name: 'Shabna',
+    role: 'Administration Board Member',
+    img: '/team/shabna.jpg',
+  },
+]
 
 const achievements = [
   { title: 'ISO Certified Institution', desc: 'Quality systems aligned with global standards.' },
@@ -100,13 +138,18 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-premium-lg border border-accent-100 bg-accent-900 text-white aspect-video flex items-center justify-center">
-              <div className="flex flex-col items-center space-y-3">
-                <div className="h-14 w-14 rounded-full bg-white/15 flex items-center justify-center border border-white/30">
-                  <span className="text-white text-lg">▶</span>
-                </div>
-                <p className="text-white/80">Video introduction placeholder</p>
-              </div>
+            <div className="rounded-3xl overflow-hidden shadow-premium-lg border border-accent-100 bg-accent-900 text-white aspect-video flex items-center justify-center relative">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/4jariOAtNtA"
+                title="KUG Oriental Academy"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0"
+              />
             </div>
           </div>
         </div>
@@ -152,23 +195,73 @@ export default function AboutPage() {
             <p className="text-primary-600 font-semibold">Our Team</p>
             <h2 className="text-3xl font-bold text-accent-900">Mentors & Practitioners</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.map((member, idx) => (
-              <Card key={idx} className="overflow-hidden" variant={idx % 2 === 0 ? 'gradient' : 'glass'}>
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={member.img}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardContent className="p-6 space-y-2">
-                  <h3 className="text-lg font-semibold text-accent-900">{member.name}</h3>
-                  <p className="text-accent-600 text-sm">{member.role}</p>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Academic Council */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-accent-900 border-l-4 border-primary-500 pl-4">Academic Council</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {academicCouncil.map((member, idx) => (
+                <Card key={idx} className="overflow-hidden h-full" variant="white">
+                  <div className="relative h-64 w-full bg-accent-100">
+                    <Image
+                      src={member.img}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <CardContent className="p-4 text-center">
+                    <h3 className="text-lg font-semibold text-accent-900">{member.name}</h3>
+                    <p className="text-accent-600 text-sm">{member.role}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Examination Board */}
+          <div className="space-y-6 pt-8">
+            <h3 className="text-2xl font-bold text-accent-900 border-l-4 border-secondary-500 pl-4">Examination Board</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {examinationBoard.map((member, idx) => (
+                <Card key={idx} className="overflow-hidden" variant="glass">
+                  <div className="relative h-48 w-full bg-accent-100">
+                    <Image
+                      src={member.img}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <CardContent className="p-6 space-y-2">
+                    <h3 className="text-lg font-semibold text-accent-900">{member.name}</h3>
+                    <p className="text-accent-600 text-sm">{member.role}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Administration Board */}
+          <div className="space-y-6 pt-8">
+            <h3 className="text-2xl font-bold text-accent-900 border-l-4 border-emerald-500 pl-4">Administration Board</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {administrationBoard.map((member, idx) => (
+                <Card key={idx} className="overflow-hidden" variant="glass">
+                  <div className="relative h-48 w-full bg-accent-100">
+                    <Image
+                      src={member.img}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <CardContent className="p-6 space-y-2">
+                    <h3 className="text-lg font-semibold text-accent-900">{member.name}</h3>
+                    <p className="text-accent-600 text-sm">{member.role}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

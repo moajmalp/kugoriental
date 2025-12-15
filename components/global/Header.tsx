@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { NAVIGATION } from '@/lib/constants'
 import { useTheme } from './ThemeProvider'
@@ -22,8 +23,14 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 text-white font-bold flex items-center justify-center shadow-lg">
-                K
+              <div className="flex-shrink-0 relative h-16 w-16">
+                <Image
+                  src="/logo.png"
+                  alt="KUG Logo"
+                  fill
+                  className="object-contain"
+                  sizes="64px"
+                />
               </div>
               <div className="hidden sm:block">
                 <span className="text-lg font-semibold text-accent-900 dark:text-white">Oriental Academy</span>
