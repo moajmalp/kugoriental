@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-const categories = ['All', 'Campus', 'Labs', 'Students', 'Events', 'Clinics']
+const categories = ['All', 'Events', 'Batch 12', 'Batch 15']
 
 export interface GalleryItem {
   src: string
@@ -24,8 +24,8 @@ export default function ClientGallery({ items }: { items: GalleryItem[] }) {
             key={cat}
             onClick={() => setActive(cat)}
             className={`px-4 py-2 rounded-full border text-sm font-medium transition-all ${active === cat
-                ? 'bg-primary-600 text-white border-primary-600'
-                : 'bg-white dark:bg-slate-800 text-accent-700 dark:text-slate-200 border-accent-200 dark:border-slate-600 hover:border-primary-400 dark:hover:border-primary-500'
+              ? 'bg-primary-600 text-white border-primary-600'
+              : 'bg-white dark:bg-slate-800 text-accent-700 dark:text-slate-200 border-accent-200 dark:border-slate-600 hover:border-primary-400 dark:hover:border-primary-500'
               }`}
           >
             {cat}

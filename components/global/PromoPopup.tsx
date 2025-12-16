@@ -59,7 +59,7 @@ export default function PromoPopup() {
                         initial={{ scale: 0.95, opacity: 0, y: 20 }}
                         animate={{ scale: 1, opacity: 1, y: 0 }}
                         exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                        className="relative bg-white rounded-3xl overflow-hidden shadow-2xl w-full max-w-4xl grid md:grid-cols-[2.8fr_4.2fr] min-h-[500px]"
+                        className="relative bg-white rounded-3xl overflow-hidden shadow-2xl w-full max-w-[850px] grid md:grid-cols-[2.5fr_4fr] max-h-[90vh] overflow-y-auto"
                     >
                         {/* Close Button - Visible on Mobile */}
                         <button
@@ -70,67 +70,67 @@ export default function PromoPopup() {
                         </button>
 
                         {/* Left Side - Dark Info Section */}
-                        <div className="hidden md:flex flex-col justify-between bg-accent-900 p-8 relative overflow-hidden text-white">
+                        <div className="hidden md:flex flex-col justify-between bg-accent-900 p-6 relative overflow-hidden text-white">
                             {/* Background decoration */}
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary-900/50 to-transparent pointer-events-none" />
                             <div className="absolute -right-10 -bottom-10 h-64 w-64 rounded-full bg-primary-500/20 blur-3xl pointer-events-none" />
 
                             <div className="relative z-10 space-y-6">
                                 <div>
-                                    <h2 className="text-3xl font-bold leading-tight">
+                                    <h2 className="text-2xl font-bold leading-tight">
                                         Discover a <span className="text-primary-400 italic">smarter</span> approach to learning
                                     </h2>
                                 </div>
 
-                                <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                                <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
                                     <span className="text-primary-300">✨</span>
-                                    <span className="text-sm font-medium">Admissions Open for 2025</span>
+                                    <span className="text-xs font-medium">Admissions Open for 2025</span>
                                 </div>
 
-                                <div className="space-y-4 pt-4">
-                                    <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                                        <div className="flex items-center space-x-3 mb-2">
-                                            <div className="h-8 w-8 rounded-lg bg-primary-500/20 flex items-center justify-center text-primary-300">
-                                                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                                <div className="space-y-3 pt-2">
+                                    <div className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                        <div className="flex items-center space-x-2 mb-1">
+                                            <div className="h-6 w-6 rounded-lg bg-primary-500/20 flex items-center justify-center text-primary-300">
+                                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
                                             </div>
-                                            <h3 className="font-semibold">Expert-Led Courses</h3>
+                                            <h3 className="font-semibold text-sm">Expert-Led Courses</h3>
                                         </div>
-                                        <p className="text-sm text-white/70">Master Acupuncture, Ayurveda & more with clinical training.</p>
+                                        <p className="text-xs text-white/70">Master Acupuncture, Ayurveda & more with clinical training.</p>
                                     </div>
 
-                                    <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                                        <div className="flex items-center space-x-3 mb-2">
-                                            <div className="h-8 w-8 rounded-lg bg-secondary-500/20 flex items-center justify-center text-secondary-300">
-                                                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                    <div className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                        <div className="flex items-center space-x-2 mb-1">
+                                            <div className="h-6 w-6 rounded-lg bg-secondary-500/20 flex items-center justify-center text-secondary-300">
+                                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                             </div>
-                                            <h3 className="font-semibold">Government Recognized</h3>
+                                            <h3 className="font-semibold text-sm">Government Recognized</h3>
                                         </div>
-                                        <p className="text-sm text-white/70">ISO certified institution with valid certifications.</p>
+                                        <p className="text-xs text-white/70">ISO certified institution with valid certifications.</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="relative z-10 pt-8">
-                                <p className="text-xs text-white/50">
+                            <div className="relative z-10 pt-6">
+                                <p className="text-[10px] text-white/50">
                                     Insights by <span className="text-white hover:text-primary-300 transition-colors">Dr. A. K. Pillai (Director)</span>
                                 </p>
                             </div>
                         </div>
 
                         {/* Right Side - Form Section */}
-                        <div className="p-8 md:p-10 bg-white relative">
+                        <div className="p-6 md:p-8 bg-white relative">
                             {/* Close Button - Desktop */}
                             <button
                                 onClick={handleClose}
                                 className="absolute top-4 right-4 hidden md:block text-gray-400 hover:text-gray-900 transition-colors"
                             >
-                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                             </button>
 
-                            <div className="flex items-center space-x-4 mb-8">
-                                <div className="h-12 w-12 rounded-full overflow-hidden border-2 border-primary-100 shadow-sm relative">
+                            <div className="flex items-center space-x-4 mb-6">
+                                <div className="h-12 w-12 rounded-full overflow-hidden border-2 border-primary-100 shadow-sm relative shrink-0">
                                     <Image
-                                        src="/team/dr-khadeeja.jpg" // Using an existing team image as placeholder/example
+                                        src="/team/dr-khadeeja.jpg"
                                         alt="Counselor"
                                         fill
                                         className="object-cover object-top"
@@ -142,19 +142,19 @@ export default function PromoPopup() {
                                 </div>
                             </div>
 
-                            <div className="mb-6">
+                            <div className="mb-5">
                                 <p className="text-gray-600 text-sm">
                                     Enter your details to access a quick guide on our course structures and fee details.
                                 </p>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-4">
+                            <form onSubmit={handleSubmit} className="space-y-3">
                                 <Input
                                     placeholder="Full Name"
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                     required
-                                    className="bg-gray-50 border-gray-200 focus:bg-white transition-all h-12"
+                                    className="bg-gray-50 border-gray-200 focus:bg-white transition-all h-10 text-sm"
                                 />
 
                                 <div className="relative">
@@ -165,7 +165,7 @@ export default function PromoPopup() {
                                         placeholder="WhatsApp Number"
                                         value={formData.whatsapp}
                                         onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                                        className="pl-24 bg-gray-50 border-gray-200 focus:bg-white transition-all h-12"
+                                        className="pl-24 bg-gray-50 border-gray-200 focus:bg-white transition-all h-10 text-sm"
                                         required
                                         type="tel"
                                     />
@@ -177,7 +177,7 @@ export default function PromoPopup() {
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     required
-                                    className="bg-gray-50 border-gray-200 focus:bg-white transition-all h-12"
+                                    className="bg-gray-50 border-gray-200 focus:bg-white transition-all h-10 text-sm"
                                 />
 
                                 <Select
@@ -185,18 +185,18 @@ export default function PromoPopup() {
                                     options={COURSE_OPTIONS}
                                     value={formData.course}
                                     onChange={(e) => setFormData({ ...formData, course: e.target.value })}
-                                    className="bg-gray-50 border-gray-200 focus:bg-white transition-all h-12"
+                                    className="bg-gray-50 border-gray-200 focus:bg-white transition-all h-10 text-sm"
                                 />
 
                                 <Button
                                     type="submit"
                                     variant="primary"
-                                    className="w-full h-12 text-base font-semibold shadow-premium hover:shadow-premium-lg transition-all"
+                                    className="w-full h-10 text-sm font-semibold shadow-premium hover:shadow-premium-lg transition-all"
                                 >
                                     Access Quick Guide
                                 </Button>
 
-                                <p className="text-[10px] text-center text-gray-400 leading-tight px-4">
+                                <p className="text-[10px] text-center text-gray-400 leading-tight px-4 pb-2">
                                     By signing up, you agree to our Terms & Conditions and consent to receive WhatsApp updates.
                                 </p>
                             </form>
