@@ -5,6 +5,10 @@ import { Button, Card, CardContent, CardHeader, CardFooter } from '@/components/
 import AnimatedCounter from '@/components/home/AnimatedCounter'
 import FaqAccordion from '@/components/home/FaqAccordion'
 import HeroSlider from '@/components/home/HeroSlider'
+import CtaBanner from '@/components/home/CtaBanner'
+import InterestForm from '@/components/home/InterestForm'
+import WorkingHours from '@/components/home/WorkingHours'
+import { courses } from '@/lib/courses'
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -31,23 +35,8 @@ const aboutHighlights = [
   'Career-Focused Curriculum',
 ]
 
-const featuredCourses = [
-  {
-    title: 'Professional Diploma in Acupuncture',
-    desc: 'Master evidence-based acupuncture with hands-on clinical practice.',
-    img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    title: 'Naturopathy & Yoga',
-    desc: 'Integrate holistic wellness, yogic sciences, and lifestyle therapy.',
-    img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    title: 'Ayurveda Panchakarma',
-    desc: 'Deep dive into detoxification protocols and classical therapies.',
-    img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80',
-  },
-]
+const selectedCourseIds = ['d-acu', 'dapt', 'dcp']
+const featuredCourses = courses.filter(course => selectedCourseIds.includes(course.id))
 
 const services = [
   'Professional Diploma in Acupuncture',
@@ -77,20 +66,20 @@ const metrics = [
 
 const faqItems = [
   {
-    q: 'Is KUG Oriental Academy government recognized?',
-    a: 'Yes. We are a government-recognized and ISO-certified institution with university-recognized certifications.',
+    q: 'What Courses do you offer at KUG Oriental Academy?',
+    a: 'We offer professional diploma and bachelor-level programs in Acupuncture, Ayurveda Panchakarma Therapy, Cupping Therapy, Yoga & Naturopathy, and Medical Laboratory Technology.',
   },
   {
-    q: 'Do you provide clinical internships?',
-    a: 'All flagship programs include supervised clinical internships with our network of partner clinics.',
+    q: 'What is the eligibility criteria for admission?',
+    a: 'Diploma programs: SSLC or Plus Two, Bachelor (B.Voc) programs: Plus Two (Science preferred for MLT) Check each brochure or contact us for details.',
   },
   {
-    q: 'Are the courses suitable for beginners?',
-    a: 'We offer structured pathways for beginners and advanced learners, guided by faculty mentors.',
+    q: 'Are you certification recognized?',
+    a: 'Yes, our certifications are recognized by: FAST Board Bangalore, Xiyuan Hospital of China Academy of Chinese Medical Science, Intercultural University of Mexico, KUG is ISO 9001:2015 certified and registered under the Govt. of India.',
   },
   {
-    q: 'Do you assist with placements?',
-    a: 'Yes. We provide career guidance, interview support, and placement assistance with partner centers.',
+    q: 'Where is the academy located?',
+    a: 'Our headquarters is in Kottakkal, Kerala. We have affiliated study centers across Kerala and South India. Online and blended options are available.',
   },
 ]
 
@@ -198,12 +187,12 @@ export default function HomePage() {
             </Button>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {featuredCourses.map((course) => (
-              <Card key={course.title} className="h-full overflow-hidden" variant="gradient">
+            {featuredCourses.map((course, idx) => (
+              <Card key={course.slug} className="h-full overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-premium-lg" variant={idx % 2 === 0 ? 'glass' : 'gradient'}>
                 <div className="relative h-40 w-full">
                   <Image
                     src={course.img}
-                    alt={course.title}
+                    alt={course.name}
                     fill
                     className="object-cover"
                     sizes="400px"
@@ -211,14 +200,18 @@ export default function HomePage() {
                   />
                 </div>
                 <CardHeader className="pb-2">
-                  <h3 className="text-xl font-semibold text-accent-900 dark:text-white">{course.title}</h3>
+                  <h3 className="text-xl font-semibold text-accent-900 dark:text-white leading-tight">{course.name}</h3>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-accent-700 dark:text-slate-200">{course.desc}</p>
+                <CardContent className="space-y-3">
+                  <p className="text-accent-700 dark:text-slate-200 line-clamp-2">{course.shortDesc}</p>
+                  <div className="flex items-center gap-2 text-sm text-accent-500 dark:text-slate-400">
+                    <span className="bg-primary-50 dark:bg-slate-800 px-2 py-1 rounded-md text-primary-700 dark:text-primary-300 font-medium text-xs border border-primary-100 dark:border-slate-700">{course.details.duration}</span>
+                    <span className="bg-secondary-50 dark:bg-slate-800 px-2 py-1 rounded-md text-secondary-700 dark:text-secondary-300 font-medium text-xs border border-secondary-100 dark:border-slate-700">{course.level}</span>
+                  </div>
                 </CardContent>
                 <CardFooter className="pt-0">
-                  <Button as="link" href="/courses" size="sm" variant="primary">
-                    Explore
+                  <Button as="link" href={`/courses/${course.slug}`} size="sm" variant="primary" className="w-full">
+                    Course Details
                   </Button>
                 </CardFooter>
               </Card>
@@ -260,25 +253,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="section-padding relative">
-        <div className="container-custom">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 text-white p-10 md:p-12 shadow-premium-lg">
-            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,_#fff,_transparent_35%)]" />
-            <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <div className="space-y-3">
-                <h2 className="text-3xl font-bold">Advance Your Career in Alternative Medicine</h2>
-                <p className="text-white/90 max-w-2xl">
-                  Join a premium learning pathway with immersive clinical training and mentorship
-                  from renowned practitioners.
-                </p>
-              </div>
-              <Button as="link" href="/contact" variant="outline" className="bg-white text-primary-700 border-white">
-                Enquire Now
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CtaBanner />
 
       {/* Why Choose Us */}
       <section className="section-padding bg-accent-50 dark:bg-slate-900/60">
@@ -370,39 +345,8 @@ export default function HomePage() {
       {/* Working Hours + Interest Form */}
       <section className="section-padding bg-accent-50 dark:bg-slate-900/60 animate-slide-up">
         <div className="container-custom grid lg:grid-cols-2 gap-10">
-          <div className="card-premium p-8 bg-white dark:bg-slate-900">
-            <h3 className="text-2xl font-semibold text-accent-900 dark:text-white mb-4">Working Hours</h3>
-            <ul className="space-y-3 text-accent-700 dark:text-slate-200">
-              <li className="flex justify-between"><span>Monday - Friday</span><span>9:00 AM - 6:00 PM</span></li>
-              <li className="flex justify-between"><span>Saturday</span><span>9:00 AM - 2:00 PM</span></li>
-              <li className="flex justify-between"><span>Sunday</span><span>By Appointment</span></li>
-            </ul>
-            <div className="mt-6 p-4 rounded-2xl bg-accent-50 dark:bg-slate-800 border border-accent-100 dark:border-slate-700 text-sm text-accent-700 dark:text-slate-200">
-              Visit our campus or schedule a virtual counseling session.
-            </div>
-          </div>
-          <div className="card-premium p-8 bg-white dark:bg-slate-900">
-            <h3 className="text-2xl font-semibold text-accent-900 dark:text-white mb-4">Tell Us Your Interest</h3>
-            <form className="grid gap-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <input className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent border-accent-200 dark:border-slate-700 bg-white dark:bg-slate-800" placeholder="Full Name" required />
-                <input className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent border-accent-200 dark:border-slate-700 bg-white dark:bg-slate-800" type="email" placeholder="Email" required />
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <input className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent border-accent-200 dark:border-slate-700 bg-white dark:bg-slate-800" placeholder="Phone" required />
-                <select className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent border-accent-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-                  <option>Program of Interest</option>
-                  {services.map((service) => (
-                    <option key={service}>{service}</option>
-                  ))}
-                </select>
-              </div>
-              <textarea className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent border-accent-200 dark:border-slate-700 bg-white dark:bg-slate-800 resize-none" rows={4} placeholder="Your message" />
-              <div className="flex justify-end">
-                <Button type="submit" variant="primary">Submit</Button>
-              </div>
-            </form>
-          </div>
+          <WorkingHours />
+          <InterestForm />
         </div>
       </section>
 
@@ -420,8 +364,8 @@ export default function HomePage() {
             <div className="grid md:grid-cols-4 gap-8 relative z-10">
               {[
                 {
-                  title: 'Foundational Theory',
-                  desc: 'Core sciences, principles, and protocols.',
+                  title: 'Enrollment & Orientation',
+                  desc: 'Begin your journey by registering for your chosen course. We guide you step by step through the admission process and help you clearly understand the program structure.',
                   icon: (
                     <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -429,8 +373,8 @@ export default function HomePage() {
                   )
                 },
                 {
-                  title: 'Practical Lab Work',
-                  desc: 'Hands-on training with modern equipment.',
+                  title: 'Expert-Led Classes',
+                  desc: 'Participate in well-structured theory and practical sessions led by experienced faculty, delivered clearly in both English and Malayalam for better learning.',
                   icon: (
                     <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -438,8 +382,8 @@ export default function HomePage() {
                   )
                 },
                 {
-                  title: 'Clinical Internship',
-                  desc: 'Supervised rotations in partner clinics.',
+                  title: 'Hands-On Clinical Training',
+                  desc: 'Gain real-world practical exposure through supervised clinical training at KUG-affiliated centers, helping you build confidence and professional skills.',
                   icon: (
                     <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -447,8 +391,8 @@ export default function HomePage() {
                   )
                 },
                 {
-                  title: 'Career Placement',
-                  desc: 'Guidance, mentorship, and job support.',
+                  title: 'Certification & Career Support',
+                  desc: 'After successful completion, receive a recognized certificate along with career guidance to help you grow and succeed in the holistic wellness field.',
                   icon: (
                     <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -531,10 +475,10 @@ export default function HomePage() {
               <Image src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop" width={60} height={60} alt="Mehwish" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
               <div>
                 <div className="flex justify-between items-start">
-                  <h4 className="font-bold text-gray-900 dark:text-white">Mehwish</h4>
+                  <h4 className="font-bold text-gray-900 dark:text-white">Mohammed Rafi</h4>
                   <span className="text-gray-300 text-2xl leading-none font-serif">“</span>
                 </div>
-                <p className="text-gray-500 text-sm mt-1 leading-snug">Compliment interested discretion estimating on stimulated apartments oh.</p>
+                <p className="text-gray-500 text-sm mt-1 leading-snug">KUG’s Cupping Therapy course was truly professional. I've started my own practice thanks to their expert training and support.</p>
               </div>
             </div>
 
@@ -543,10 +487,10 @@ export default function HomePage() {
               <Image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" width={60} height={60} alt="Elizabeth" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
               <div>
                 <div className="flex justify-between items-center mb-1">
-                  <h4 className="font-bold text-gray-900 dark:text-white">Elizabeth Jeff</h4>
+                  <h4 className="font-bold text-gray-900 dark:text-white">Fathima Riyas</h4>
                   <span className="text-purple-500 text-3xl leading-none font-serif">“</span>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm font-medium leading-snug">Dear so sing when in find read of call. As distrusts behaviour abilities defective is.</p>
+                <p className="text-gray-600 dark:text-gray-300 text-sm font-medium leading-snug">KUG Oriental Academy gave me hands-on experience in Acupuncture that I couldn't find anywhere else. The clinical sessions really built my confidence.</p>
               </div>
             </div>
 
@@ -555,10 +499,10 @@ export default function HomePage() {
               <Image src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" width={60} height={60} alt="Emily" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
               <div>
                 <div className="flex justify-between items-start">
-                  <h4 className="font-bold text-gray-900 dark:text-white">Emily Thomas</h4>
+                  <h4 className="font-bold text-gray-900 dark:text-white">Shyam Krishna</h4>
                   <span className="text-gray-300 text-2xl leading-none font-serif">“</span>
                 </div>
-                <p className="text-gray-500 text-sm mt-1 leading-snug">Never at water me might. On formed merits hunted unable merely by mr whence or.</p>
+                <p className="text-gray-500 text-sm mt-1 leading-snug">After completing the Diploma in Panchakarma Therapy, I immediately got placed at a wellness center. The faculty support was excellent!</p>
               </div>
             </div>
           </div>

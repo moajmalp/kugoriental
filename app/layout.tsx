@@ -9,7 +9,6 @@ import WhatsAppButton from '@/components/global/WhatsAppButton'
 import Script from 'next/script'
 import Providers from './providers'
 import FloatingButtons from '@/components/global/FloatingButtons'
-import PromoPopup from '@/components/global/PromoPopup'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -88,7 +87,6 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <FloatingButtons />
-          <PromoPopup />
           <Footer />
           <ScrollToTop />
         </Providers>

@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import FranchiseModal from './FranchiseModal'
 
 export default function FloatingButtons() {
     const [isVisible, setIsVisible] = useState(false)
+    const [isFranchiseModalOpen, setIsFranchiseModalOpen] = useState(false)
 
     // Show buttons after a small delay
     useEffect(() => {
@@ -16,6 +18,10 @@ export default function FloatingButtons() {
 
     return (
         <>
+            <FranchiseModal
+                isOpen={isFranchiseModalOpen}
+                onClose={() => setIsFranchiseModalOpen(false)}
+            />
             {/* A. WhatsApp Button (Bottom Left) */}
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
@@ -24,7 +30,7 @@ export default function FloatingButtons() {
                 className="fixed left-6 bottom-6 z-50 group"
             >
                 <a
-                    href="https://wa.me/9526271193"
+                    href="https://wa.me/8921728267"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center h-14 w-14 rounded-full bg-green-500 text-white shadow-xl hover:shadow-green-500/40 hover:scale-110 transition-all duration-300 relative"
@@ -59,8 +65,8 @@ export default function FloatingButtons() {
                 </a>
 
                 {/* Franchise Icon */}
-                <a
-                    href="/contact"
+                <button
+                    onClick={() => setIsFranchiseModalOpen(true)}
                     className="flex items-center justify-center w-12 h-12 bg-secondary-600 text-white rounded-full shadow-lg hover:shadow-xl hover:bg-secondary-700 transition-all duration-300 hover:scale-110 group relative"
                     aria-label="Apply for Franchise"
                 >
@@ -71,7 +77,7 @@ export default function FloatingButtons() {
                     <span className="absolute right-14 bg-secondary-600 text-white px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                         Franchise
                     </span>
-                </a>
+                </button>
             </motion.div>
         </>
     )

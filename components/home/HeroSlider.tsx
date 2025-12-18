@@ -8,27 +8,27 @@ import { Button } from '@/components/ui'
 const slides = [
     {
         id: 1,
-        title: 'Master Ancient Healing Arts',
-        subtitle: 'Government-recognized courses in Acupuncture, Ayurveda, and Yoga. Start your holistic journey today.',
-        image: 'https://images.unsplash.com/photo-1544367563-12123d8965cd?auto=format&fit=crop&w=1600&q=80',
-        ctaPrimary: { text: 'Explore Courses', href: '/courses' },
-        ctaSecondary: { text: 'Download Brochure', href: '#' }
+        title: 'Turn Traditional Wisdom into a Profession',
+        subtitle: 'Professional diplomas and certificates designed for modern wellness careers. Learn through expert guidance, hands-on training, and real clinical exposure.',
+        image: '/hero-image/hero-1.jpg',
+        ctaPrimary: { text: 'View Courses', href: '/courses' },
+        ctaSecondary: { text: 'Apply Now', href: '/contact' }
     },
     {
         id: 2,
-        title: 'Clinical Internships Included',
-        subtitle: 'Gain real-world experience at top affiliated holistic hospitals. Bridge theory with practice.',
-        image: 'https://images.unsplash.com/photo-1576091160550-2187d80a851a?auto=format&fit=crop&w=1600&q=80',
-        ctaPrimary: { text: 'Admissions Open', href: '/contact' },
-        ctaSecondary: { text: 'View Gallery', href: '/gallery' }
+        title: 'Master Ancient Healing Arts',
+        subtitle: 'Government-recognized courses in Acupuncture, Ayurveda, Yoga, and holistic therapies. Begin a meaningful career rooted in natural healing traditions.',
+        image: '/hero-image/hero-2.jpg',
+        ctaPrimary: { text: 'Explore Courses', href: '/courses' },
+        ctaSecondary: { text: 'Download Brochure', href: '/brochures/kug_main_brochure.pdf', target: '_blank' }
     },
     {
         id: 3,
-        title: 'Global Career Opportunities',
-        subtitle: 'Our ISO-certified diplomas open doors worldwide. Join a network of successful practitioners.',
-        image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80',
-        ctaPrimary: { text: 'Apply Now', href: '/contact' },
-        ctaSecondary: { text: 'Success Stories', href: '/about' }
+        title: 'Learn, Practice, Heal Naturally',
+        subtitle: 'From Panchakarma and Acupuncture to Yoga and Counselling, gain practical skills that empower you to heal, guide, and transform lives naturally.',
+        image: '/inhero-3.jpg',
+        ctaPrimary: { text: 'Explore Courses', href: '/courses' },
+        ctaSecondary: { text: 'Contact Us', href: '/contact' }
     }
 ]
 
@@ -60,7 +60,7 @@ export default function HeroSlider() {
                                 className="space-y-6 lg:space-y-8"
                             >
                                 <span className="inline-block py-1.5 px-4 rounded-full bg-secondary-100 text-secondary-700 font-medium text-sm lg:text-base border border-secondary-200">
-                                    {slides[current].id === 1 ? 'Admissions Open 2024' : slides[current].id === 2 ? 'Hands-on Training' : 'ISO Certified'}
+                                    {slides[current].id === 1 ? 'Build a Healing Career' : slides[current].id === 2 ? 'Admissions Open 2026' : 'Trusted Holistic Education'}
                                 </span>
 
                                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">

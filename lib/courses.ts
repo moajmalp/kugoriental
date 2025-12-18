@@ -211,7 +211,7 @@ export const courses: Course[] = [
         category: 'Alternative Therapy',
         shortDesc: 'Comprehensive training in ancient cupping therapy techniques and safety protocols.',
         overview: 'The Diploma in Cupping Therapy is an in-depth program providing comprehensive training in the ancient healing practice of cupping. Students learn various cupping techniques, equipment usage, safety measures, and practical applications to support pain relief, improved circulation, and relaxation.',
-        img: 'https://images.unsplash.com/photo-1544367563-12123d8965cd?auto=format&fit=crop&w=900&q=80',
+        img: '/cupping-therapy.jpg',
         audience: [
             'Aspiring wellness professionals',
             'Therapists',
@@ -306,7 +306,7 @@ export const courses: Course[] = [
         category: 'Yoga & Wellness',
         shortDesc: 'Foundational training in yoga philosophy, postures, and meditation.',
         overview: 'The Certificate in Yoga program provides foundational training in yoga philosophy, postures, breathing techniques, meditation, and relaxation, enabling graduates to guide yoga sessions and promote wellness.',
-        img: 'https://images.unsplash.com/photo-1544367563-12123d8965cd?auto=format&fit=crop&w=900&q=80',
+        img: '/yoga.jpg',
         audience: [
             'Yoga beginners',
             'Fitness enthusiasts',
@@ -338,7 +338,7 @@ export const courses: Course[] = [
         category: 'Martial Arts & Traditional Wellness',
         shortDesc: 'Specialized diploma in the ancient Indian martial art of Kalarippayattu.',
         overview: 'A specialized diploma focusing on the ancient Indian martial art of Kalarippayattu, covering physical training, combat techniques, flexibility, discipline, and cultural heritage.',
-        img: 'https://images.unsplash.com/photo-1544367563-12123d8965cd?auto=format&fit=crop&w=900&q=80',
+        img: '/kalarippayattu.jpg',
         audience: [
             'Martial arts students',
             'Fitness professionals',
@@ -370,7 +370,7 @@ export const courses: Course[] = [
         category: 'Ayurveda',
         shortDesc: 'Professional program for skilled Panchakarma therapists.',
         overview: 'A professional program designed to train skilled Panchakarma therapists for India’s growing Ayurvedic healthcare sector.',
-        img: 'https://images.unsplash.com/photo-1544367563-12123d8965cd?auto=format&fit=crop&w=900&q=80&sig=4',
+        img: '/courses/panchakarma001.jpg',
         audience: [
             'Students aiming to specialize in Ayurvedic therapy and detox practices',
             'Wellness professionals'

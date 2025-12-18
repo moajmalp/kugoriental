@@ -220,7 +220,7 @@ export default function Footer() {
                 <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                 <span className="hidden md:inline">|</span>
                 <p className="hidden md:block">
-                  Crafted with <span className="text-red-400">♥</span> by Developer
+                  Developed by <span><Link href="https://codoacademy.com" target="_blank" rel="noopener noreferrer">CODO AI Innovations</Link></span>
                 </p>
               </div>
             </div>

@@ -1,32 +1,44 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { Button, Card, CardContent, CardHeader } from '@/components/ui'
+import dynamic from 'next/dynamic'
+
+// Dynamically import PdfThumbnail to avoid SSR issues with canvas
+const PdfThumbnail = dynamic(() => import('@/components/resources/PdfThumbnail'), {
+  ssr: false,
+  loading: () => <div className="w-full h-40 bg-slate-100 animate-pulse" />
+})
 
 export const metadata: Metadata = {
   title: 'Resources',
   description: 'Access educational resources, study materials, and learning tools at KUG Oriental Academy.',
-  openGraph: {
-    title: 'Resources | KUG Oriental Academy',
-    description: 'Access educational resources, study materials, and learning tools at KUG Oriental Academy.',
-  },
-  twitter: {
-    title: 'Resources | KUG Oriental Academy',
-    description: 'Access educational resources, study materials, and learning tools at KUG Oriental Academy.',
-  },
 }
 
 const brochures = [
-  'Acupuncture Program Overview',
-  'Ayurveda Panchakarma Guide',
-  'Naturopathy & Yoga Prospectus',
-  'Clinical Internship Handbook',
-  'Holistic Health Care Pathway',
-  'Admissions & Fees Brochure',
-].map((title, idx) => ({
-  title,
-  img: `https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80&sig=${idx}`,
-  link: '#',
-}))
+  {
+    title: 'KUG Main Brochure',
+    file: '/brochures/kug-main-brochure.pdf',
+  },
+  {
+    title: 'Acupuncture Course',
+    file: '/brochures/acupuncture-course.pdf',
+  },
+  {
+    title: 'Ayurveda Panchakarma',
+    file: '/brochures/ayurveda-panchakarma.pdf',
+  },
+  {
+    title: 'Naturopathy & Yoga',
+    file: '/brochures/naturopathy-and-yoga.pdf',
+  },
+  {
+    title: 'Cupping Therapy',
+    file: '/brochures/cupping-therapy-course.pdf',
+  },
+  {
+    title: 'Medical Lab Technology',
+    file: '/brochures/medical-laboratory-technology.pdf',
+  },
+]
 
 export default function ResourcesPage() {
   return (
@@ -36,29 +48,30 @@ export default function ResourcesPage() {
           <p className="text-primary-600 font-semibold">Resources</p>
           <h1 className="text-4xl font-bold text-accent-900">Downloadable Brochures</h1>
           <p className="text-accent-700 max-w-3xl mx-auto">
-            Access program details, internship guides, and admissions information in one place.
+            Access detailed course information, curriculum guides, and admission prospectuses.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {brochures.map((item) => (
-            <Card key={item.title} className="overflow-hidden h-full">
-              <div className="relative h-40 w-full">
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
+            <Card key={item.title} className="overflow-hidden h-full flex flex-col hover:shadow-premium-xl transition-shadow duration-300">
+              <div className="relative h-60 w-full bg-slate-100 border-b border-slate-100 dark:border-slate-800">
+                <PdfThumbnail file={item.file} />
               </div>
-              <CardHeader>
-                <h3 className="text-lg font-semibold text-accent-900">{item.title}</h3>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <Button as="link" href={item.link} variant="primary" size="sm">
-                  Download
+              <div className="p-6 flex flex-col flex-1 gap-4">
+                <h3 className="text-xl font-bold text-accent-900 line-clamp-2 leading-tight">
+                  {item.title}
+                </h3>
+                <Button
+                  as="a"
+                  href={item.file}
+                  download
+                  variant="primary"
+                  className="w-full mt-auto"
+                >
+                  Download Brochure
                 </Button>
-              </CardContent>
+              </div>
             </Card>
           ))}
         </div>
@@ -66,4 +79,3 @@ export default function ResourcesPage() {
     </div>
   )
 }
-
