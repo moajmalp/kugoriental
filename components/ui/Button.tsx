@@ -21,6 +21,7 @@ interface LinkButtonProps extends CommonProps {
   href: string
   target?: string
   rel?: string
+  download?: boolean | string
   onClick?: MouseEventHandler<HTMLAnchorElement>
 }
 
@@ -50,9 +51,16 @@ export default function Button(props: Props) {
   const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
 
   if (props.as === 'link') {
-    const { href, target, rel, onClick } = props as LinkButtonProps
+    const { href, target, rel, download, onClick } = props as LinkButtonProps
     return (
-      <Link href={href} target={target} rel={rel} className={classes} onClick={onClick}>
+      <Link
+        href={href}
+        target={target}
+        rel={rel}
+        className={classes}
+        onClick={onClick}
+        download={download}
+      >
         {children}
       </Link>
     )
