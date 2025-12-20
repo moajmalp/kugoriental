@@ -14,7 +14,9 @@ export default function ClientGallery({ items }: { items: GalleryItem[] }) {
   const [active, setActive] = useState('All')
   const [lightbox, setLightbox] = useState<string | null>(null)
 
-  const filtered = active === 'All' ? items : items.filter((i) => i.category === active)
+  const filtered = active === 'All'
+    ? items.filter((i) => !['Batch 12', 'Batch 15'].includes(i.category))
+    : items.filter((i) => i.category === active)
 
   return (
     <>

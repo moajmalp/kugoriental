@@ -76,7 +76,7 @@ const examinationBoard = [
 
 const administrationBoard = [
     {
-        name: 'Muhammed Aboo Thahir K',
+        name: 'Aboo Thahir K',
         role: 'Administration Board Member',
         img: '/team/muhammed-thahir.jpg',
     },
@@ -377,12 +377,12 @@ export default function AboutClient() {
                         <div className="flex flex-wrap justify-center gap-6 w-full">
                             {academicCouncil.map((member, idx) => (
                                 <Card key={idx} className="overflow-hidden h-full w-full sm:w-[280px]" variant="white">
-                                    <div className="relative h-64 w-full bg-accent-100">
+                                    <div className="relative h-80 w-full bg-accent-100">
                                         <Image
                                             src={member.img}
                                             alt={member.name}
                                             fill
-                                            className="object-cover object-top"
+                                            className="object-cover"
                                         />
                                     </div>
                                     <CardContent className="p-4 text-center">
@@ -402,12 +402,12 @@ export default function AboutClient() {
                         <div className="flex flex-wrap justify-center gap-6 w-full">
                             {examinationBoard.map((member, idx) => (
                                 <Card key={idx} className="overflow-hidden w-full sm:w-[280px]" variant="glass">
-                                    <div className="relative h-48 w-full bg-accent-100">
+                                    <div className="relative h-80 w-full bg-accent-100">
                                         <Image
                                             src={member.img}
                                             alt={member.name}
                                             fill
-                                            className="object-cover object-top"
+                                            className="object-cover"
                                         />
                                     </div>
                                     <CardContent className="p-6 space-y-2">
@@ -427,12 +427,12 @@ export default function AboutClient() {
                         <div className="flex flex-wrap justify-center gap-6 w-full">
                             {administrationBoard.map((member, idx) => (
                                 <Card key={idx} className="overflow-hidden w-full sm:w-[280px]" variant="glass">
-                                    <div className="relative h-48 w-full bg-accent-100">
+                                    <div className="relative h-80 w-full bg-accent-100">
                                         <Image
                                             src={member.img}
                                             alt={member.name}
                                             fill
-                                            className="object-cover object-top"
+                                            className="object-cover"
                                         />
                                     </div>
                                     <CardContent className="p-6 space-y-2">
