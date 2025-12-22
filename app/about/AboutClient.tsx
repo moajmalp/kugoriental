@@ -47,7 +47,7 @@ const academicCouncil = [
     {
         name: 'Prof. M Haroon M',
         role: 'Academic Council Member',
-        img: '/team/prof-haroon.jpg',
+        img: '/team/prof-haroon.jpeg',
     },
     {
         name: 'U Keshav Dev',
@@ -62,7 +62,7 @@ const academicCouncil = [
     {
         name: 'Dr Farha Noushad',
         role: 'Academic Council Member',
-        img: '/team/44f3b67d-05fd-4344-9ac5-ba844bc82574.jfif',
+        img: '/team/farha.jpg',
     },
 ]
 
