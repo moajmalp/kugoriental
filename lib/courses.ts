@@ -236,69 +236,6 @@ export const courses: Course[] = [
         }
     },
     {
-        id: 'cahc',
-        slug: 'certificate-in-acupressure-and-holistic-health-care',
-        name: 'Certificate in Acupressure and Holistic Health Care',
-        level: 'Intermediate',
-        category: 'Acupressure & Holistic Health',
-        shortDesc: 'Foundational skills in acupressure therapy and holistic healing.',
-        overview: 'This program introduces the principles of acupressure and holistic healing by channelizing vital energy to restore balance in the body. Students gain foundational skills in acupressure therapy, emergency handling, and alternative healing methods.',
-        img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80',
-        audience: [
-            'Beginners in holistic healing',
-            'Wellness practitioners',
-            'Individuals interested in natural therapies'
-        ],
-        whatWillYouLearn: [
-            'Principles of acupressure therapy',
-            'Vital energy flow and balance',
-            'Emergency treatment techniques',
-            'Basic knowledge of alternative therapies',
-            'Holistic healing approach'
-        ],
-        details: {
-            programCode: 'CAHC',
-            duration: '6 Months',
-            eligibility: '10th Pass or Equivalent',
-            examination: '3 Theory Papers + 1 Practical Paper',
-            totalMarks: '400',
-            practicalTraining: '30 Days',
-            medium: 'Malayalam & English',
-            fee: '₹8,400'
-        }
-    },
-    {
-        id: 'dahc',
-        slug: 'diploma-in-acupressure-and-holistic-health-care',
-        name: 'Diploma in Acupressure and Holistic Health Care',
-        level: 'Intermediate',
-        category: 'Acupressure & Holistic Health',
-        shortDesc: 'Comprehensive diploma covering acupressure techniques and holistic health practices.',
-        overview: 'A comprehensive diploma covering acupressure techniques and holistic health practices, including lifestyle modification and natural healing methods for overall well-being.',
-        img: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80',
-        audience: [
-            'Acupressure practitioners',
-            'Holistic health professionals',
-            'Wellness students'
-        ],
-        whatWillYouLearn: [
-            'Advanced acupressure techniques',
-            'Holistic health practices',
-            'Nutrition and lifestyle guidance',
-            'Clinical application of pressure therapy'
-        ],
-        details: {
-            programCode: 'DAHC',
-            duration: '1 Year',
-            eligibility: 'Plus Two Pass or Equivalent / 10th Pass + CAHC',
-            examination: '3 Theory Papers + 1 Practical Paper',
-            totalMarks: '400',
-            practicalTraining: '90 Days',
-            medium: 'Malayalam & English',
-            fee: '₹12,400'
-        }
-    },
-    {
         id: 'cya',
         slug: 'certificate-in-yoga',
         name: 'Certificate in Yoga',

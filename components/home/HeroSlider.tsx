@@ -8,9 +8,9 @@ import { Button } from '@/components/ui'
 const slides = [
     {
         id: 1,
-        title: 'Turn Traditional Wisdom into a Profession',
+        title: 'Welcome to KUG Oriental Academy',
         subtitle: 'Professional diplomas and certificates designed for modern wellness careers. Learn through expert guidance, hands-on training, and real clinical exposure.',
-        image: '/hero-image/hero-1.jpg',
+        image: '/hero-image/hero-1.jpeg',
         ctaPrimary: { text: 'View Courses', href: '/courses' },
         ctaSecondary: { text: 'Apply Now', href: '/contact' }
     },

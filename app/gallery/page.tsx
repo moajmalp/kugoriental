@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 const items = [
   // Events
   { src: '/events/30-768x512.jpg', category: 'Events' },
-  { src: '/events/4-copy-2.psd4_.jpg', category: 'Events' },
   { src: '/events/6.jpg', category: 'Events' },
   { src: '/events/69-768x512.jpg', category: 'Events' },
   { src: '/events/71-768x512.jpg', category: 'Events' },
@@ -78,6 +77,13 @@ const items = [
   { src: '/batch 15/THASLEEMA-IQBAL-768x967.jpg', category: 'Batch 15' },
   { src: '/batch 15/UMAIR-CK-751x1024.jpg', category: 'Batch 15' },
   { src: '/batch 15/ZAKKIYA-FAHEEMA-768x990.jpeg', category: 'Batch 15' },
+
+  // Approvals
+  { src: '/approvels/DocScanner 16 Dec 2025 11-07 am_page-0001.jpg', category: 'Approvals' },
+  { src: '/approvels/DocScanner 16 Dec 2025 11-09 am_page-0001.jpg', category: 'Approvals' },
+  { src: '/approvels/DocScanner Dec 17, 2025 1-11 PM_page-0001.jpg', category: 'Approvals' },
+  { src: '/approvels/DocScanner Nov 19, 2025 8-55 AM_page-0001.jpg', category: 'Approvals' },
+  { src: '/approvels/KUG ORIENTAL ACADEMY QMS_page-0001.jpg', category: 'Approvals' },
 ]
 
 export default function GalleryPage() {

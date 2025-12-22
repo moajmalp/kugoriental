@@ -341,7 +341,7 @@ export default function AboutClient() {
                                 className="h-full w-full object-cover"
                             />
                         </div>
-                        <h3 className="text-xl font-semibold text-accent-900">P Ummer Gurukkal</h3>
+                        <h3 className="text-xl font-semibold text-accent-900">Dr. P Ummer Gurukkal</h3>
                         <p className="text-accent-500 text-sm">Founder & Academic Director</p>
                         <p className="italic text-accent-600 text-sm mt-2">“Holistic care with global standards.”</p>
                     </div>
@@ -355,7 +355,7 @@ export default function AboutClient() {
                             KUG Oriental Academy is not just a place of learning—it is a gateway to purposeful careers and holistic well-being.”
                         </p>
                         <div className="pt-2 text-accent-600">
-                            <p className="font-semibold">P Ummer Gurukkal</p>
+                            <p className="font-semibold">Dr. P Ummer Gurukkal</p>
                             <p className="text-sm">Signature</p>
                         </div>
                     </div>

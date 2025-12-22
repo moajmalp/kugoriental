@@ -1,112 +1,50 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Card, CardContent, CardHeader } from '@/components/ui'
+import { BLOG_POSTS } from '@/lib/blogData'
+import BlogClient from './BlogClient'
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Read the latest articles, news, and insights about alternative medicine from KUG Oriental Academy.',
+  title: 'Blog | KUG Oriental Academy',
+  description: 'Read the latest articles, news, and insights about integrative healing, clinical training, and holistic wellness from KUG Oriental Academy.',
   openGraph: {
-    title: 'Blog | KUG Oriental Academy',
-    description: 'Read the latest articles, news, and insights about alternative medicine from KUG Oriental Academy.',
-  },
-  twitter: {
-    title: 'Blog | KUG Oriental Academy',
-    description: 'Read the latest articles, news, and insights about alternative medicine from KUG Oriental Academy.',
+    title: 'Research & Insights | KUG Oriental Academy',
+    description: 'Premium perspectives on integrative health, clinical training, and holistic wellness careers.',
   },
 }
 
-const posts = [
-  {
-    title: 'Integrative Healing: Blending Tradition & Science',
-    date: 'Oct 5, 2024',
-    read: '6 min read',
-    img: 'https://images.unsplash.com/photo-1556229010-aa3f7ff66b43?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    title: 'Why Clinical Internships Matter in Alternative Medicine',
-    date: 'Sep 18, 2024',
-    read: '5 min read',
-    img: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    title: 'Top Skills for Modern Acupuncture Practitioners',
-    date: 'Aug 30, 2024',
-    read: '7 min read',
-    img: 'https://images.unsplash.com/photo-1554295405-9d66f6a1a049?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    title: 'Holistic Nutrition: Building Evidence-Based Meal Plans',
-    date: 'Aug 12, 2024',
-    read: '8 min read',
-    img: 'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    title: 'Mind-Body Medicine: Techniques for Stress Relief',
-    date: 'Jul 21, 2024',
-    read: '6 min read',
-    img: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    title: 'Building a Career in Alternative Medicine',
-    date: 'Jun 30, 2024',
-    read: '9 min read',
-    img: 'https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=900&q=80',
-  },
-]
-
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-accent-50 to-white">
-      <div className="container-custom section-padding pt-24 space-y-10">
-        <div className="space-y-3 text-center">
-          <p className="text-primary-600 font-semibold">Insights</p>
-          <h1 className="text-4xl font-bold text-accent-900">From Our Blog</h1>
-          <p className="text-accent-700 max-w-3xl mx-auto">
-            Premium perspectives on integrative health, clinical training, and holistic wellness careers.
-          </p>
-        </div>
+    <div className="min-h-screen bg-[#FAF4E8] dark:bg-slate-950">
+      {/* Hero Section */}
+      <section className="relative pt-40 pb-20 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-secondary-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {posts.map((post, idx) => (
-            <Card
-              key={post.title}
-              className="h-full overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-premium-lg"
-              variant={idx % 2 === 0 ? 'gradient' : 'glass'}
-            >
-              <div className="relative h-44 w-full">
-                <Image
-                  src={post.img}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                  sizes="400px"
-                  loading="lazy"
-                />
-              </div>
-              <CardHeader className="space-y-2 pb-2">
-                <p className="text-sm text-accent-500 flex items-center gap-2">
-                  <span>{post.date}</span>
-                  <span>•</span>
-                  <span>{post.read}</span>
-                </p>
-                <h3 className="text-xl font-semibold text-accent-900 leading-snug">
-                  {post.title}
-                </h3>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center gap-2 text-primary-600 font-semibold hover:underline"
-                >
-                  Read More
-                  <span aria-hidden>→</span>
-                </Link>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="container-custom relative z-10">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-bold tracking-wide uppercase animate-fade-in">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+              </span>
+              Our Perspectives
+            </div>
+
+            <h1 className="text-5xl md:text-6xl font-black text-accent-900 dark:text-white leading-[1.1] tracking-tight">
+              Knowledge for <span className="text-primary-600 italic">Integrative</span> Healing
+            </h1>
+
+            <p className="text-lg md:text-xl text-accent-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+              Deep dives into ancient wisdom, modern medical research, and the future of holistic healthcare.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="pb-32 container-custom relative z-10">
+        <BlogClient initialPosts={BLOG_POSTS} />
+      </section>
     </div>
   )
 }

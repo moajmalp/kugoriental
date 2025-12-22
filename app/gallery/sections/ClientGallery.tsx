@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-const categories = ['All', 'Events', 'Batch 12', 'Batch 15']
+const categories = ['All', 'Events', 'Approvals', 'Batch 12', 'Batch 15']
 
 export interface GalleryItem {
   src: string
@@ -15,7 +15,7 @@ export default function ClientGallery({ items }: { items: GalleryItem[] }) {
   const [lightbox, setLightbox] = useState<string | null>(null)
 
   const filtered = active === 'All'
-    ? items.filter((i) => !['Batch 12', 'Batch 15'].includes(i.category))
+    ? items.filter((i) => !['Batch 12', 'Batch 15', 'Approvals'].includes(i.category))
     : items.filter((i) => i.category === active)
 
   return (
@@ -42,12 +42,11 @@ export default function ClientGallery({ items }: { items: GalleryItem[] }) {
             className="break-inside-avoid cursor-pointer overflow-hidden rounded-2xl shadow-premium border border-accent-100 dark:border-slate-700 hover:shadow-premium-lg transition-shadow"
             onClick={() => setLightbox(item.src)}
           >
-            <div className="relative w-full aspect-[4/3]">
-              <Image
+            <div className="relative w-full">
+              <img
                 src={item.src}
                 alt={item.category}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
+                className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="p-3 text-sm text-accent-600 dark:text-slate-300 bg-white dark:bg-slate-800">{item.category}</div>

@@ -115,5 +115,5 @@ This is the project architecture phase. Page sections and content will be design
 
 ## License
 
-© 2024 KUG Oriental Academy. All rights reserved.
+© 2025 KUG Oriental Academy. All rights reserved.
 
