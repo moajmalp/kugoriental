@@ -132,9 +132,9 @@ export default function AboutClient() {
                             <span>Our Legacy</span>
                         </div>
                         <h1 className="text-5xl font-extrabold text-accent-900 tracking-tight leading-tight">
-                            Reviving Ancient Wisdom <br />
+                            About KUG <br />
                             <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                                With Modern Science
+                                Oriental Academy
                             </span>
                         </h1>
                         <p className="text-accent-700 text-lg leading-relaxed max-w-xl">
@@ -386,7 +386,7 @@ export default function AboutClient() {
                                         />
                                     </div>
                                     <CardContent className="p-4 text-center">
-                                        <h3 className="text-lg font-semibold text-accent-900">{member.name}</h3>
+                                        <h4 className="text-lg font-semibold text-accent-900">{member.name}</h4>
                                         <p className="text-accent-600 text-sm">{member.role}</p>
                                     </CardContent>
                                 </Card>
@@ -411,7 +411,7 @@ export default function AboutClient() {
                                         />
                                     </div>
                                     <CardContent className="p-6 space-y-2">
-                                        <h3 className="text-lg font-semibold text-accent-900">{member.name}</h3>
+                                        <h4 className="text-lg font-semibold text-accent-900">{member.name}</h4>
                                         <p className="text-accent-600 text-sm">{member.role}</p>
                                     </CardContent>
                                 </Card>
@@ -436,7 +436,7 @@ export default function AboutClient() {
                                         />
                                     </div>
                                     <CardContent className="p-6 space-y-2">
-                                        <h3 className="text-lg font-semibold text-accent-900">{member.name}</h3>
+                                        <h4 className="text-lg font-semibold text-accent-900">{member.name}</h4>
                                         <p className="text-accent-600 text-sm">{member.role}</p>
                                     </CardContent>
                                 </Card>

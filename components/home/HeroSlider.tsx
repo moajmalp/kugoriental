@@ -64,7 +64,7 @@ export default function HeroSlider() {
                                 </span>
 
                                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-                                    {slides[current].title}
+                                    {slides[current].id === 1 ? 'Welcome to KUG Oriental Academy' : slides[current].title}
                                 </h1>
 
                                 <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg">

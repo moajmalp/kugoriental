@@ -11,18 +11,21 @@ import WorkingHours from '@/components/home/WorkingHours'
 import { courses } from '@/lib/courses'
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'KUG Oriental Academy | Holistic Healing & Alternative Medicine Courses in Kerala',
   description:
-    'Welcome to KUG Oriental Academy - A government-recognized and ISO-certified institution in alternative medicine.',
+    'Join KUG Oriental Academy, a government-recognized institute offering professional courses in Acupuncture, Ayurveda, Yoga, Cupping Therapy, and Holistic Health. Build your healing career today.',
   openGraph: {
-    title: 'Home | KUG Oriental Academy',
+    title: 'KUG Oriental Academy | Holistic Healing & Alternative Medicine Courses in Kerala',
     description:
-      'Welcome to KUG Oriental Academy - A government-recognized and ISO-certified institution in alternative medicine.',
+      'Join KUG Oriental Academy, a government-recognized institute offering professional courses in Acupuncture, Ayurveda, Yoga, Cupping Therapy, and Holistic Health. Build your healing career today.',
   },
   twitter: {
-    title: 'Home | KUG Oriental Academy',
+    title: 'KUG Oriental Academy | Holistic Healing & Alternative Medicine Courses in Kerala',
     description:
-      'Welcome to KUG Oriental Academy - A government-recognized and ISO-certified institution in alternative medicine.',
+      'Join KUG Oriental Academy, a government-recognized institute offering professional courses in Acupuncture, Ayurveda, Yoga, Cupping Therapy, and Holistic Health. Build your healing career today.',
+  },
+  alternates: {
+    canonical: 'https://kugoriental.com',
   },
 }
 
@@ -141,7 +144,7 @@ export default function HomePage() {
           <div className="relative rounded-3xl overflow-hidden shadow-premium-lg border border-accent-100 card-variant-gradient">
             <Image
               src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80"
-              alt="Students learning"
+              alt="Practical training session at KUG Oriental Academy"
               width={1200}
               height={900}
               className="object-cover h-full w-full"
@@ -472,7 +475,7 @@ export default function HomePage() {
 
             {/* Card 1 */}
             <div className="relative bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 flex gap-4 ml-0 sm:ml-12 hover:-translate-x-2 transition-transform duration-300">
-              <Image src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop" width={60} height={60} alt="Mehwish" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
+              <Image src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop" width={60} height={60} alt="Mohammed Rafi" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
               <div>
                 <div className="flex justify-between items-start">
                   <h4 className="font-bold text-gray-900 dark:text-white">Mohammed Rafi</h4>
@@ -484,7 +487,7 @@ export default function HomePage() {
 
             {/* Card 2 (Active/Highlighted) */}
             <div className="relative bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl shadow-purple-100/50 dark:shadow-none border-l-4 border-l-purple-600 flex gap-4 -ml-4 sm:ml-0 scale-105 z-10 transition-transform">
-              <Image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" width={60} height={60} alt="Elizabeth" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
+              <Image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" width={60} height={60} alt="Fathima Riyas" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
               <div>
                 <div className="flex justify-between items-center mb-1">
                   <h4 className="font-bold text-gray-900 dark:text-white">Fathima Riyas</h4>
@@ -496,7 +499,7 @@ export default function HomePage() {
 
             {/* Card 3 */}
             <div className="relative bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 flex gap-4 ml-0 sm:ml-12 hover:-translate-x-2 transition-transform duration-300">
-              <Image src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" width={60} height={60} alt="Emily" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
+              <Image src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" width={60} height={60} alt="Shyam Krishna" className="rounded-full object-cover h-14 w-14 border-2 border-white shadow-sm shrink-0" />
               <div>
                 <div className="flex justify-between items-start">
                   <h4 className="font-bold text-gray-900 dark:text-white">Shyam Krishna</h4>

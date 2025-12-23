@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 import { BLOG_POSTS } from '@/lib/blogData'
 import BlogShare from './BlogShare'
 
@@ -17,9 +18,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | KUG Oriental Academy`,
     description: post.excerpt,
     openGraph: {
-      title: post.title,
+      title: `${post.title} | KUG Oriental Academy`,
       description: post.excerpt,
       images: [post.image],
+    },
+    alternates: {
+      canonical: `https://kugoriental.com/blog/${post.slug}`,
     },
   }
 }
@@ -193,6 +197,34 @@ export default function BlogDetailPage({ params }: Props) {
           </aside>
         </div>
       </section>
+      <Script
+        id="blog-article-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: post.title,
+            image: [post.image],
+            datePublished: new Date(post.date).toISOString().split('T')[0],
+            author: [{
+              '@type': 'Person',
+              name: post.author.name,
+              url: 'https://kugoriental.com/blog',
+            }],
+            publisher: {
+              '@type': 'Organization',
+              name: 'KUG Oriental Academy',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://kugoriental.com/logo.png'
+              }
+            },
+            description: post.excerpt
+          })
+        }}
+      />
     </div>
   )
 }

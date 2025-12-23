@@ -16,7 +16,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${course.name} | KUG Oriental Academy`,
-    description: course.shortDesc,
+    description: `${course.shortDesc} Advance your career with professional training in Kerala, India at KUG Oriental Academy.`,
+    alternates: {
+      canonical: `https://kugoriental.com/courses/${course.slug}`,
+    },
   }
 }
 
@@ -44,6 +47,39 @@ export default function CourseDetailPage({ params }: Props) {
               name: 'KUG Oriental Academy',
               url: 'https://kugoriental.com',
             },
+            duration: course.details.duration,
+            educationalCredentialAwarded: course.level,
+          }),
+        }}
+      />
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://kugoriental.com',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Courses',
+                item: 'https://kugoriental.com/courses',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: course.name,
+                item: `https://kugoriental.com/courses/${course.slug}`,
+              },
+            ],
           }),
         }}
       />
@@ -76,7 +112,7 @@ export default function CourseDetailPage({ params }: Props) {
             <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl animate-fade-in group border border-gray-100">
               <Image
                 src={course.img}
-                alt={course.name}
+                alt={`Professional ${course.name} course at KUG Oriental Academy, Kerala`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
@@ -121,7 +157,7 @@ export default function CourseDetailPage({ params }: Props) {
                 variant="primary"
                 className="w-full h-14 text-lg shadow-lg shadow-primary-500/25 btn-lift bg-gradient-to-r from-primary-600 to-primary-500"
               >
-                Start Learning
+                Apply Now →
               </Button>
 
               {/* Course Info Grid */}

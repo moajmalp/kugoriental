@@ -2,15 +2,18 @@ import type { Metadata } from 'next'
 import ClientGallery from './sections/ClientGallery'
 
 export const metadata: Metadata = {
-  title: 'Gallery',
-  description: 'View photos and videos from KUG Oriental Academy - campus life, events, and student activities.',
+  title: 'Gallery | Life at KUG Oriental Academy',
+  description: 'Explore photos of campus life, clinical training, workshops, and student activities at KUG Oriental Academy.',
   openGraph: {
-    title: 'Gallery | KUG Oriental Academy',
-    description: 'View photos and videos from KUG Oriental Academy - campus life, events, and student activities.',
+    title: 'Gallery | Life at KUG Oriental Academy',
+    description: 'Explore photos of campus life, clinical training, workshops, and student activities at KUG Oriental Academy.',
   },
   twitter: {
-    title: 'Gallery | KUG Oriental Academy',
-    description: 'View photos and videos from KUG Oriental Academy - campus life, events, and student activities.',
+    title: 'Gallery | Life at KUG Oriental Academy',
+    description: 'Explore photos of campus life, clinical training, workshops, and student activities at KUG Oriental Academy.',
+  },
+  alternates: {
+    canonical: 'https://kugoriental.com/gallery',
   },
 }
 
@@ -92,7 +95,7 @@ export default function GalleryPage() {
       <div className="container-custom section-padding pt-24 space-y-8">
         <div className="text-center space-y-3">
           <p className="text-primary-600 font-semibold">Gallery</p>
-          <h1 className="text-4xl font-bold text-accent-900">Campus, Clinics & Events</h1>
+          <h1 className="text-4xl font-bold text-accent-900">Our Campus & Training Gallery</h1>
           <p className="text-accent-700 max-w-3xl mx-auto">
             Explore moments from our campus life, modern labs, clinical training, and community events.
           </p>

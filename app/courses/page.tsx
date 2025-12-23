@@ -4,15 +4,18 @@ import Link from 'next/link'
 import { Button, Card, CardContent, CardHeader, CardFooter } from '@/components/ui'
 
 export const metadata: Metadata = {
-  title: 'Courses',
-  description: 'Explore our comprehensive range of alternative medicine courses at KUG Oriental Academy.',
+  title: 'Courses at KUG Oriental Academy | Acupuncture, Ayurveda, Yoga & More',
+  description: 'Explore professional and diploma courses in Acupuncture, Ayurveda Panchakarma, Cupping Therapy, Yoga, Acupressure, Counselling Psychology, and Holistic Health at KUG Oriental Academy.',
   openGraph: {
-    title: 'Courses | KUG Oriental Academy',
-    description: 'Explore our comprehensive range of alternative medicine courses at KUG Oriental Academy.',
+    title: 'Courses at KUG Oriental Academy | Acupuncture, Ayurveda, Yoga & More',
+    description: 'Explore professional and diploma courses in Acupuncture, Ayurveda Panchakarma, Cupping Therapy, Yoga, Acupressure, Counselling Psychology, and Holistic Health at KUG Oriental Academy.',
   },
   twitter: {
-    title: 'Courses | KUG Oriental Academy',
-    description: 'Explore our comprehensive range of alternative medicine courses at KUG Oriental Academy.',
+    title: 'Courses at KUG Oriental Academy | Acupuncture, Ayurveda, Yoga & More',
+    description: 'Explore professional and diploma courses in Acupuncture, Ayurveda Panchakarma, Cupping Therapy, Yoga, Acupressure, Counselling Psychology, and Holistic Health at KUG Oriental Academy.',
+  },
+  alternates: {
+    canonical: 'https://kugoriental.com/courses',
   },
 }
 
@@ -33,7 +36,7 @@ export default function CoursesPage() {
       <div className="container-custom space-y-10">
         <div className="space-y-3 text-center">
           <p className="text-primary-600 font-semibold">Programs</p>
-          <h1 className="text-4xl font-bold text-accent-900 dark:text-white">Courses Built for Holistic Careers</h1>
+          <h1 className="text-4xl font-bold text-accent-900 dark:text-white">Our Professional Courses</h1>
           <p className="text-accent-700 dark:text-slate-300 max-w-3xl mx-auto">
             Explore evidence-based programs with university-recognized certifications, expert-led mentorship, and immersive clinical internships.
           </p>

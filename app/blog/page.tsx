@@ -3,11 +3,14 @@ import { BLOG_POSTS } from '@/lib/blogData'
 import BlogClient from './BlogClient'
 
 export const metadata: Metadata = {
-  title: 'Blog | KUG Oriental Academy',
-  description: 'Read the latest articles, news, and insights about integrative healing, clinical training, and holistic wellness from KUG Oriental Academy.',
+  title: 'Blog | Holistic Health & Alternative Medicine Insights | KUG Oriental Academy',
+  description: 'Read articles on holistic healing, acupuncture, Ayurveda, yoga, and wellness education from KUG Oriental Academy experts.',
   openGraph: {
-    title: 'Research & Insights | KUG Oriental Academy',
-    description: 'Premium perspectives on integrative health, clinical training, and holistic wellness careers.',
+    title: 'Blog | Holistic Health & Alternative Medicine Insights | KUG Oriental Academy',
+    description: 'Read articles on holistic healing, acupuncture, Ayurveda, yoga, and wellness education from KUG Oriental Academy experts.',
+  },
+  alternates: {
+    canonical: 'https://kugoriental.com/blog',
   },
 }
 
@@ -31,7 +34,7 @@ export default function BlogPage() {
             </div>
 
             <h1 className="text-5xl md:text-6xl font-black text-accent-900 dark:text-white leading-[1.1] tracking-tight">
-              Knowledge for <span className="text-primary-600 italic">Integrative</span> Healing
+              Holistic Health & <span className="text-primary-600 italic">Wellness</span> Blog
             </h1>
 
             <p className="text-lg md:text-xl text-accent-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">

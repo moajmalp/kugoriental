@@ -79,7 +79,7 @@ export default function ResourcesClient() {
                         Academic Hub
                     </div>
                     <h1 className="text-5xl font-black text-accent-900 tracking-tight leading-tight">
-                        Learning <span className="text-primary-600">Resources</span>
+                        Download Our <span className="text-primary-600">Resources</span>
                     </h1>
                     <p className="text-accent-700 text-lg leading-relaxed">
                         Access our comprehensive library of course brochures, curriculum guides, and admission prospectuses to begin your journey in holistic medicine.

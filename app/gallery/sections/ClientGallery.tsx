@@ -43,10 +43,13 @@ export default function ClientGallery({ items }: { items: GalleryItem[] }) {
             onClick={() => setLightbox(item.src)}
           >
             <div className="relative w-full">
-              <img
+              <Image
                 src={item.src}
-                alt={item.category}
+                alt={`${item.category} at KUG Oriental Academy`}
+                width={800}
+                height={600}
                 className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                loading="lazy"
               />
             </div>
             <div className="p-3 text-sm text-accent-600 dark:text-slate-300 bg-white dark:bg-slate-800">{item.category}</div>

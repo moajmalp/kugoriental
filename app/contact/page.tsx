@@ -18,17 +18,20 @@ export default function ContactPage() {
       <div className="container-custom section-padding pt-24 space-y-12">
         <div className="text-center space-y-3 animate-fade-up">
           <p className="text-primary-600 font-semibold">Contact</p>
-          <h1 className="text-4xl font-bold text-gray-900">Connect With Our Admissions Team</h1>
+          <h1 className="text-4xl font-bold text-gray-900">Contact Us</h1>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Reach out for program inquiries, campus visits, or personalized counseling.
+            Contact KUG Oriental Academy for admissions, course details, and career guidance in holistic and alternative medicine education.
           </p>
+        </div>
+        <div className="hidden">
+          <p>Contact KUG Oriental Academy for admissions, course details, and career guidance in holistic and alternative medicine education.</p>
         </div>
 
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
           {/* Contact details */}
           <div className="space-y-6 animate-fade-up animation-delay-100">
             <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-              <h3 className="text-xl font-semibold text-gray-900">Contact Info</h3>
+              <h2 className="text-xl font-semibold text-gray-900">Contact Info</h2>
               <div className="mt-6 space-y-5">
                 {/* Address */}
                 <a
@@ -103,19 +106,26 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-              <h3 className="text-xl font-semibold text-gray-900">Working Hours</h3>
-              <ul className="mt-4 space-y-3 text-gray-600">
-                <li className="flex justify-between border-b border-gray-100 pb-2"><span>Mon - Fri</span><span className="font-medium text-gray-900">9:00 AM - 6:00 PM</span></li>
-                <li className="flex justify-between border-b border-gray-100 pb-2"><span>Saturday</span><span className="font-medium text-gray-900">9:00 AM - 2:00 PM</span></li>
-                <li className="flex justify-between"><span>Sunday</span><span className="text-primary-500">By Appointment</span></li>
-              </ul>
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 overflow-hidden">
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">Our Location</h2>
+              <div className="aspect-video w-full bg-accent-50 rounded-xl relative group cursor-pointer border-2 border-dashed border-accent-200 flex items-center justify-center">
+                <div className="text-center space-y-2">
+                  <svg className="h-10 w-10 text-accent-300 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <p className="text-accent-500 font-medium">Google Maps Embed Placeholder</p>
+                  <p className="text-xs text-accent-400 px-4">Visit us at Malappuram road, Kottakkal</p>
+                </div>
+                {/* This is a placeholder as requested. Real embed can be added here easily. */}
+                <div className="absolute inset-0 bg-primary-500/0 group-hover:bg-primary-500/5 transition-colors duration-300" />
+              </div>
             </div>
           </div>
 
           {/* Form */}
           <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 animate-fade-up animation-delay-200">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-2">Send a Message</h3>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-2">Send a Message</h2>
             <p className="text-gray-500 mb-6">We'll get back to you within 24 hours.</p>
             <form className="grid gap-5">
               <div className="grid sm:grid-cols-2 gap-4">
