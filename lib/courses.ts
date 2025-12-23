@@ -53,95 +53,32 @@ export const courses: Course[] = [
         }
     },
     {
-        id: 'cct',
-        slug: 'certificate-in-cupping-therapy',
-        name: 'Certificate in Cupping Therapy',
-        level: 'Intermediate',
-        category: 'Alternative Therapy',
-        shortDesc: 'Comprehensive training in ancient cupping therapy techniques and safety protocols.',
-        overview: 'The Certificate in Cupping Therapy program provides comprehensive training in the ancient practice of cupping therapy. Students learn cupping techniques, safety protocols, and practical application to support pain relief, improved circulation, and relaxation.',
-        img: 'https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=900&q=80',
-        audience: [
-            'Therapy practitioners',
-            'Wellness professionals',
-            'Students interested in holistic healing'
-        ],
-        whatWillYouLearn: [
-            'Fundamentals of cupping therapy',
-            'Dry and wet cupping techniques',
-            'Safety, hygiene, and contraindications',
-            'Pain management applications',
-            'Practical hands-on training'
-        ],
-        details: {
-            programCode: 'CCT',
-            duration: '6 Months',
-            eligibility: 'Plus Two',
-            examination: '2 Theory Papers + 1 Practical Paper',
-            totalMarks: '300',
-            practicalTraining: '30 Days',
-            medium: 'Malayalam & English',
-            fee: '₹15,000'
-        }
-    },
-    {
-        id: 'mac-2',
-        slug: 'master-level-in-acupuncture-therapy-2nd-year',
-        name: 'Master Level in Acupuncture Therapy – 2nd Year',
+        id: 'bac-lat-2',
+        slug: 'bachelor-level-in-acupuncture-lateral-entry-2nd-year',
+        name: 'Bachelor Level in Acupuncture – Lateral Entry 2nd Year',
         level: 'Intermediate',
         category: 'Acupuncture',
-        shortDesc: 'Advanced master-level program on acupuncture theory and clinical practice.',
-        overview: 'This advanced master-level program focuses on in-depth acupuncture theory, diagnostic methods, meridian systems, and supervised clinical practice.',
-        img: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=900&q=80',
+        shortDesc: 'Accelerated bachelor program focusing on advanced theory and clinical expertise.',
+        overview: 'An accelerated bachelor-level acupuncture program focusing on advanced theoretical knowledge and clinical expertise.',
+        img: '/Bachelor Level in Acupuncture – Lateral Entry 2nd Year.jpg',
         audience: [
-            'Advanced acupuncture students',
-            'Healthcare professionals'
+            'Diploma holders in acupuncture'
         ],
         whatWillYouLearn: [
-            'Advanced acupuncture techniques',
-            'Meridian and diagnostic systems',
-            'Clinical case analysis',
-            'Traditional Chinese Medicine principles'
+            'Advanced acupuncture theory',
+            'Diagnosis and treatment planning',
+            'Clinical practice skills',
+            'Patient management'
         ],
         details: {
-            programCode: 'M. Ac',
+            programCode: 'B. Ac',
             duration: '1 Year',
-            eligibility: 'M. Ac 1st Year',
-            examination: '3 Theory Papers + 1 Practical Paper',
-            totalMarks: '400',
-            practicalTraining: '90 Days',
-            medium: 'Malayalam & English',
-            fee: '₹38,000'
-        }
-    },
-    {
-        id: 'mac-1',
-        slug: 'master-level-in-acupuncture-therapy-1st-year',
-        name: 'Master Level in Acupuncture Therapy – 1st Year',
-        level: 'Intermediate',
-        category: 'Acupuncture',
-        shortDesc: 'Foundational master-level program covering acupuncture principles and diagnosis.',
-        overview: 'A foundational master-level program covering acupuncture principles, clinical diagnosis, and extensive hands-on training.',
-        img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80',
-        audience: [
-            'Bachelor-level acupuncture graduates',
-            'Medical graduates'
-        ],
-        whatWillYouLearn: [
-            'Acupuncture fundamentals',
-            'Meridian systems',
-            'Diagnosis techniques',
-            'Clinical practice'
-        ],
-        details: {
-            programCode: 'M. Ac',
-            duration: '1 Year',
-            eligibility: 'B. Ac / Any Medical Graduate',
+            eligibility: 'D. Acu',
             examination: '4 Theory Papers + 1 Practical Paper',
             totalMarks: '500',
             practicalTraining: '90 Days',
             medium: 'Malayalam & English',
-            fee: '₹38,000'
+            fee: '₹35,000'
         }
     },
     {
@@ -175,128 +112,63 @@ export const courses: Course[] = [
         }
     },
     {
-        id: 'bac-lat-2',
-        slug: 'bachelor-level-in-acupuncture-lateral-entry-2nd-year',
-        name: 'Bachelor Level in Acupuncture – Lateral Entry 2nd Year',
+        id: 'mac-1',
+        slug: 'master-level-in-acupuncture-therapy-1st-year',
+        name: 'Master Level in Acupuncture Therapy – 1st Year',
         level: 'Intermediate',
         category: 'Acupuncture',
-        shortDesc: 'Accelerated bachelor program focusing on advanced theory and clinical expertise.',
-        overview: 'An accelerated bachelor-level acupuncture program focusing on advanced theoretical knowledge and clinical expertise.',
-        img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80',
+        shortDesc: 'Foundational master-level program covering acupuncture principles and diagnosis.',
+        overview: 'A foundational master-level program covering acupuncture principles, clinical diagnosis, and extensive hands-on training.',
+        img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80',
         audience: [
-            'Diploma holders in acupuncture'
+            'Bachelor-level acupuncture graduates',
+            'Medical graduates'
         ],
         whatWillYouLearn: [
-            'Advanced acupuncture theory',
-            'Diagnosis and treatment planning',
-            'Clinical practice skills',
-            'Patient management'
+            'Acupuncture fundamentals',
+            'Meridian systems',
+            'Diagnosis techniques',
+            'Clinical practice'
         ],
         details: {
-            programCode: 'B. Ac',
+            programCode: 'M. Ac',
             duration: '1 Year',
-            eligibility: 'D. Acu',
+            eligibility: 'B. Ac / Any Medical Graduate',
             examination: '4 Theory Papers + 1 Practical Paper',
             totalMarks: '500',
             practicalTraining: '90 Days',
             medium: 'Malayalam & English',
-            fee: '₹35,000'
+            fee: '₹38,000'
         }
     },
     {
-        id: 'dct',
-        slug: 'diploma-in-cupping-therapy',
-        name: 'Diploma in Cupping Therapy',
+        id: 'mac-2',
+        slug: 'master-level-in-acupuncture-therapy-2nd-year',
+        name: 'Master Level in Acupuncture Therapy – 2nd Year',
         level: 'Intermediate',
-        category: 'Alternative Therapy',
-        shortDesc: 'Comprehensive training in ancient cupping therapy techniques and safety protocols.',
-        overview: 'The Diploma in Cupping Therapy is an in-depth program providing comprehensive training in the ancient healing practice of cupping. Students learn various cupping techniques, equipment usage, safety measures, and practical applications to support pain relief, improved circulation, and relaxation.',
-        img: '/cupping-therapy.jpg',
+        category: 'Acupuncture',
+        shortDesc: 'Foundational master-level program covering acupuncture principles and diagnosis.',
+        overview: 'A foundational master-level program covering acupuncture principles, clinical diagnosis, and extensive hands-on training.',
+        img: '/Master Level in Acupuncture Therapy – 2nd Year.jpg',
         audience: [
-            'Aspiring wellness professionals',
-            'Therapists',
-            'Health practitioners interested in non-invasive healing methods'
+            'Bachelor-level acupuncture graduates',
+            'Medical graduates'
         ],
         whatWillYouLearn: [
-            'Traditional and modern cupping methods',
-            'Use of different types of cups and techniques',
-            'Protocols for treating skin, pain, and neurological conditions',
-            'Practical training in clinical environments',
-            'Beauty and cosmetic cupping techniques'
+            'Acupuncture fundamentals',
+            'Meridian systems',
+            'Diagnosis techniques',
+            'Clinical practice'
         ],
         details: {
-            programCode: 'DCT',
+            programCode: 'M. Ac',
             duration: '1 Year',
-            eligibility: 'Plus Two Pass or Equivalent / 10th Pass + CCT',
-            examination: '3 Theory Papers + 1 Practical Paper',
-            totalMarks: '400',
+            eligibility: 'B. Ac / Any Medical Graduate',
+            examination: '4 Theory Papers + 1 Practical Paper',
+            totalMarks: '500',
             practicalTraining: '90 Days',
             medium: 'Malayalam & English',
-            fee: '₹30,000'
-        }
-    },
-    {
-        id: 'cya',
-        slug: 'certificate-in-yoga',
-        name: 'Certificate in Yoga',
-        level: 'Intermediate',
-        category: 'Yoga & Wellness',
-        shortDesc: 'Foundational training in yoga philosophy, postures, and meditation.',
-        overview: 'The Certificate in Yoga program provides foundational training in yoga philosophy, postures, breathing techniques, meditation, and relaxation, enabling graduates to guide yoga sessions and promote wellness.',
-        img: '/yoga.jpg',
-        audience: [
-            'Yoga beginners',
-            'Fitness enthusiasts',
-            'Wellness instructors'
-        ],
-        whatWillYouLearn: [
-            'Yoga philosophy and principles',
-            'Asanas and body alignment',
-            'Pranayama and breathing techniques',
-            'Meditation and relaxation methods',
-            'Basic yoga teaching skills'
-        ],
-        details: {
-            programCode: 'CYA',
-            duration: '6 Months',
-            eligibility: '10th Pass or Equivalent',
-            examination: '3 Theory Papers + 1 Practical Paper',
-            totalMarks: '400',
-            practicalTraining: '30 Days',
-            medium: 'Malayalam & English',
-            fee: '₹6,200'
-        }
-    },
-    {
-        id: 'dkp',
-        slug: 'diploma-in-kalarippayattu',
-        name: 'Diploma in Kalarippayattu',
-        level: 'Intermediate',
-        category: 'Martial Arts & Traditional Wellness',
-        shortDesc: 'Specialized diploma in the ancient Indian martial art of Kalarippayattu.',
-        overview: 'A specialized diploma focusing on the ancient Indian martial art of Kalarippayattu, covering physical training, combat techniques, flexibility, discipline, and cultural heritage.',
-        img: '/kalarippayattu.jpg',
-        audience: [
-            'Martial arts students',
-            'Fitness professionals',
-            'Cultural and traditional art enthusiasts'
-        ],
-        whatWillYouLearn: [
-            'Kalarippayattu combat techniques',
-            'Unarmed and weapon-based training',
-            'Flexibility and body conditioning',
-            'Mental discipline and focus',
-            'Traditional healing and cultural knowledge'
-        ],
-        details: {
-            programCode: 'DKP',
-            duration: '2 Years',
-            eligibility: '10th Pass or Equivalent',
-            examination: '3 Theory Papers + 1 Practical Paper (each year)',
-            totalMarks: '800',
-            practicalTraining: '120 Days',
-            medium: 'Malayalam & English',
-            fee: '₹30,000'
+            fee: '₹38,000'
         }
     },
     {
@@ -359,6 +231,134 @@ export const courses: Course[] = [
             practicalTraining: 'No Practical',
             medium: 'Malayalam & English',
             fee: '₹5,000'
+        }
+    },
+    {
+        id: 'cct',
+        slug: 'certificate-in-cupping-therapy',
+        name: 'Certificate in Cupping Therapy',
+        level: 'Intermediate',
+        category: 'Alternative Therapy',
+        shortDesc: 'Comprehensive training in ancient cupping therapy techniques and safety protocols.',
+        overview: 'The Certificate in Cupping Therapy program provides comprehensive training in the ancient practice of cupping therapy. Students learn cupping techniques, safety protocols, and practical application to support pain relief, improved circulation, and relaxation.',
+        img: 'https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=900&q=80',
+        audience: [
+            'Therapy practitioners',
+            'Wellness professionals',
+            'Students interested in holistic healing'
+        ],
+        whatWillYouLearn: [
+            'Fundamentals of cupping therapy',
+            'Dry and wet cupping techniques',
+            'Safety, hygiene, and contraindications',
+            'Pain management applications',
+            'Practical hands-on training'
+        ],
+        details: {
+            programCode: 'CCT',
+            duration: '6 Months',
+            eligibility: 'Plus Two',
+            examination: '2 Theory Papers + 1 Practical Paper',
+            totalMarks: '300',
+            practicalTraining: '30 Days',
+            medium: 'Malayalam & English',
+            fee: '₹15,000'
+        }
+    },
+    {
+        id: 'dct',
+        slug: 'diploma-in-cupping-therapy',
+        name: 'Diploma in Cupping Therapy',
+        level: 'Intermediate',
+        category: 'Alternative Therapy',
+        shortDesc: 'Comprehensive training in ancient cupping therapy techniques and safety protocols.',
+        overview: 'The Diploma in Cupping Therapy is an in-depth program providing comprehensive training in the ancient healing practice of cupping. Students learn various cupping techniques, equipment usage, safety measures, and practical applications to support pain relief, improved circulation, and relaxation.',
+        img: '/cupping-therapy.jpg',
+        audience: [
+            'Aspiring wellness professionals',
+            'Therapists',
+            'Health practitioners interested in non-invasive healing methods'
+        ],
+        whatWillYouLearn: [
+            'Traditional and modern cupping methods',
+            'Use of different types of cups and techniques',
+            'Protocols for treating skin, pain, and neurological conditions',
+            'Practical training in clinical environments',
+            'Beauty and cosmetic cupping techniques'
+        ],
+        details: {
+            programCode: 'DCT',
+            duration: '1 Year',
+            eligibility: 'Plus Two Pass or Equivalent / 10th Pass + CCT',
+            examination: '3 Theory Papers + 1 Practical Paper',
+            totalMarks: '400',
+            practicalTraining: '90 Days',
+            medium: 'Malayalam & English',
+            fee: '₹30,000'
+        }
+    },
+    {
+        id: 'dkp',
+        slug: 'diploma-in-kalarippayattu',
+        name: 'Diploma in Kalarippayattu',
+        level: 'Intermediate',
+        category: 'Martial Arts & Traditional Wellness',
+        shortDesc: 'Specialized diploma in the ancient Indian martial art of Kalarippayattu.',
+        overview: 'A specialized diploma focusing on the ancient Indian martial art of Kalarippayattu, covering physical training, combat techniques, flexibility, discipline, and cultural heritage.',
+        img: '/kalarippayattu.jpg',
+        audience: [
+            'Martial arts students',
+            'Fitness professionals',
+            'Cultural and traditional art enthusiasts'
+        ],
+        whatWillYouLearn: [
+            'Kalarippayattu combat techniques',
+            'Unarmed and weapon-based training',
+            'Flexibility and body conditioning',
+            'Mental discipline and focus',
+            'Traditional healing and cultural knowledge'
+        ],
+        details: {
+            programCode: 'DKP',
+            duration: '2 Years',
+            eligibility: '10th Pass or Equivalent',
+            examination: '3 Theory Papers + 1 Practical Paper (each year)',
+            totalMarks: '800',
+            practicalTraining: '120 Days',
+            medium: 'Malayalam & English',
+            fee: '₹30,000'
+        }
+    },
+    {
+        id: 'cya',
+        slug: 'certificate-in-yoga',
+        name: 'Certificate in Yoga',
+        level: 'Intermediate',
+        category: 'Yoga & Wellness',
+        shortDesc: 'Foundational training in yoga philosophy, postures, and meditation.',
+        overview: 'The Certificate in Yoga program provides foundational training in yoga philosophy, postures, breathing techniques, meditation, and relaxation, enabling graduates to guide yoga sessions and promote wellness.',
+        img: '/yoga.jpg',
+        audience: [
+            'Yoga beginners',
+            'Fitness enthusiasts',
+            'Wellness instructors'
+        ],
+        whatWillYouLearn: [
+            'Yoga philosophy and principles',
+            'Asanas and body alignment',
+            'Pranayama and breathing techniques',
+            'Meditation and relaxation methods',
+            'Basic yoga teaching skills'
+        ],
+        details: {
+            programCode: 'CYA',
+            duration: '6 Months',
+            eligibility: '10th Pass or Equivalent',
+            examination: '3 Theory Papers + 1 Practical Paper',
+            totalMarks: '400',
+            practicalTraining: '30 Days',
+            medium: 'Malayalam & English',
+            fee: '₹6,200'
         }
     }
 ]
