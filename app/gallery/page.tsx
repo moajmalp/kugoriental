@@ -20,6 +20,8 @@ export const metadata: Metadata = {
 const items = [
   // Events
   { src: '/events/30-768x512.jpg', category: 'Events' },
+  { src: '/events/WhatsApp Image 2025-12-20 at 10.47.07 AM (1).jpeg', category: 'Events' },
+  { src: '/events/WhatsApp Image 2025-12-20 at 10.47.07 AM.jpeg', category: 'Events' },
   { src: '/events/6.jpg', category: 'Events' },
   { src: '/events/69-768x512.jpg', category: 'Events' },
   { src: '/events/71-768x512.jpg', category: 'Events' },
@@ -38,6 +40,7 @@ const items = [
   { src: '/events/qq6-768x512.jpg', category: 'Events' },
   { src: '/events/qq9-768x512.jpg', category: 'Events' },
   { src: '/events/w5-768x512.jpg', category: 'Events' },
+  { src: '/events/WhatsApp Image 2025-12-20 at 10.47.08 AM.jpeg', category: 'Events' },
 
   // Batch 12
   { src: '/batch 12/ABDUSALAM-CK.jpg', category: 'Batch 12' },
@@ -82,11 +85,11 @@ const items = [
   { src: '/batch 15/ZAKKIYA-FAHEEMA-768x990.jpeg', category: 'Batch 15' },
 
   // Approvals
-  { src: '/approvels/DocScanner 16 Dec 2025 11-07 am_page-0001.jpg', category: 'Approvals' },
   { src: '/approvels/DocScanner 16 Dec 2025 11-09 am_page-0001.jpg', category: 'Approvals' },
-  { src: '/approvels/DocScanner Dec 17, 2025 1-11 PM_page-0001.jpg', category: 'Approvals' },
   { src: '/approvels/DocScanner Nov 19, 2025 8-55 AM_page-0001.jpg', category: 'Approvals' },
+  { src: '/approvels/DocScanner Dec 17, 2025 1-11 PM_page-0001.jpg', category: 'Approvals' },
   { src: '/approvels/KUG ORIENTAL ACADEMY QMS_page-0001.jpg', category: 'Approvals' },
+  { src: '/approvels/DocScanner 16 Dec 2025 11-07 am_page-0001.jpg', category: 'Approvals' },
 ]
 
 export default function GalleryPage() {
